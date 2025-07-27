@@ -42,6 +42,7 @@ dependencies:
   riverpod_generator: ^2.6.5
   flutter_inner_shadow: ^0.0.1
   intl: ^0.20.2
+  collection: ^1.19.1
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/images/gif/
     - assets/images/pixel/
     - assets/images/
+    - assets/images/inflearn/
 
   fonts:
     - family: neo
