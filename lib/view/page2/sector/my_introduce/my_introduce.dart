@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../common/text/style/text_style.dart';
+import '../../../../component/text_component.dart';
 import '../../../../component/windows_xp_box_toggle_component.dart';
 
 class MyIntroduce extends StatefulWidget {
@@ -36,7 +37,6 @@ class _MyIntroduceState extends State<MyIntroduce> {
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-
               children: [
                 MyPicture(),
                 SizedBox(width: 10),
@@ -64,23 +64,18 @@ class Explanation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Text(
-            '이름: 엄용진',
-            style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-          ),
-          Text(
-            '''기술적 문제에 부딪혀도 현실과 타협하기보다는 인내심을 가지고 매일 밤을 새워가며 문제를 해결해 나갑니다.''',
-            style: Text_style.copyWith(fontSize: screenWidth * 0.015),
+          TextComponent(text: '이름: 엄용진'),
+          TextComponent(
+            text:
+                '''기술적 문제에 부딪혀도 현실과 타협하기보다는 인내심을 가지고 매일 밤을 새워가며 문제를 해결해 나갑니다.''',
+            ratio: 0.015,
           ),
           SizedBox(height: 20),
           SelectableText(
             'Github: https://github.com/xpsa0720',
             style: Text_style.copyWith(fontSize: screenWidth * 0.015),
           ),
-          Text(
-            '#xpsa #보안 #주니어 개발자',
-            style: Text_style.copyWith(fontSize: screenWidth * 0.013),
-          ),
+          TextComponent(text: '#xpsa #보안 #주니어 개발자', ratio: 0.013),
           SizedBox(height: 5),
         ],
       ),

@@ -139,40 +139,51 @@ class Descriptor extends StatelessWidget {
           SizedBox(height: screenWidth * 0.02),
           Personnel(model: model, fontSize: fontSize),
           SizedBox(height: screenWidth * 0.03),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "패키지:",
-                    style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-                  ),
-                  SizedBox(height: screenWidth * 0.01),
-                  ...model.package
-                      .expandIndexed(
-                        (i, x) => [
-                          Row(
-                            children: [
-                              SizedBox(width: screenWidth * 0.04),
-                              Text(
-                                x,
-                                style: Text_style.copyWith(
-                                  fontSize: screenWidth * 0.025,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      )
-                      .toList(),
-                ],
-              ),
-            ],
-          ),
+          if (model.package.isNotEmpty) Package(model: model),
         ],
       ),
+    );
+  }
+}
+
+class Package extends StatelessWidget {
+  final Skils_Model model;
+  const Package({super.key, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "패키지:",
+              style: Text_style.copyWith(fontSize: screenWidth * 0.025),
+            ),
+            SizedBox(height: screenWidth * 0.01),
+            ...model.package
+                .expandIndexed(
+                  (i, x) => [
+                    Row(
+                      children: [
+                        SizedBox(width: screenWidth * 0.04),
+                        Text(
+                          x,
+                          style: Text_style.copyWith(
+                            fontSize: screenWidth * 0.025,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+                .toList(),
+          ],
+        ),
+      ],
     );
   }
 }

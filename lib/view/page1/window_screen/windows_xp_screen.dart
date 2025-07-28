@@ -47,9 +47,6 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
 
     if (init) {
       setState(() {
-        // sizeY = screenHeight / 1.5;
-        //
-        // sizeX = sizeY * 1.53;
         sizeX = screenWidth / 1.5;
         sizeY = sizeX / 1.53;
         posX = (screenWidth / 2) - sizeX * 0.5;

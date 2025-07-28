@@ -5,10 +5,13 @@ import 'package:my_page/common/text/blue_screen_text/blue_screen_text.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/component/windows_xp_box_component.dart';
 import 'package:my_page/view/page2/sector/app/app_portfolio.dart';
+import 'package:my_page/view/page2/sector/coding_style/coding_style.dart';
 import 'package:my_page/view/page2/sector/my_study/my_sytudy.dart';
 import 'package:my_page/view/page2/sector/web/web_portfolio.dart';
 import 'package:my_page/view/page2/sector/my_introduce/my_introduce.dart';
 import 'package:my_page/view/page2/sector/skill_stack/skill_stack.dart';
+
+import '../../component/windows_xp_box_toggle_component.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -74,6 +77,7 @@ class _Page2State extends State<Page2> with TickerProviderStateMixin {
                       childs: [
                         MyIntroduce(),
                         SkillStack(),
+                        CodingStyle(),
                         AppPortfolio(),
                         WebPortfolio(),
                         MySytudy(),

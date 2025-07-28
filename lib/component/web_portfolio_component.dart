@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/common/util/dat_util.dart';
@@ -95,7 +96,11 @@ class Image_GIF extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(width: 2, color: Colors.black),
           ),
-          child: Image.asset(gif_path, width: screenWidth / 2),
+          child: Image.asset(
+            gif_path,
+            width: screenWidth / 2,
+            fit: BoxFit.cover,
+          ),
         ),
       ],
     );
@@ -119,15 +124,13 @@ class Descriptor extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: screenWidth * 0.48,
+      width: screenWidth * 0.55,
 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: screenWidth * 0.02),
-
-          SizedBox(height: screenWidth * 0.01),
+          SizedBox(height: screenWidth * 0.03),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children:
@@ -136,7 +139,7 @@ class Descriptor extends StatelessWidget {
                     .map(
                       (x) => Text(
                         x,
-                        style: Text_style.copyWith(fontSize: fontSize * 0.7),
+                        style: Text_style.copyWith(fontSize: fontSize * 0.8),
                       ),
                     )
                     .toList(),
@@ -160,23 +163,61 @@ class SkillDescriptor extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: screenWidth * 0.42,
+      width: screenWidth * 0.5,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(height: screenWidth * 0.04),
           Language(fontSize: fontSize, model: model),
-          SizedBox(height: screenWidth * 0.02),
+          SizedBox(height: screenWidth * 0.01),
           Framwork(fontSize: fontSize, model: model),
-          SizedBox(height: screenWidth * 0.02),
-          Library(model: model, fontSize: fontSize),
-          SizedBox(height: screenWidth * 0.02),
+          // SizedBox(height: screenWidth * 0.01),
+          // Library(model: model, fontSize: fontSize),
+          SizedBox(height: screenWidth * 0.01),
           Platform(model: model, fontSize: fontSize),
-          SizedBox(height: screenWidth * 0.02),
+          SizedBox(height: screenWidth * 0.01),
           Personnel(model: model, fontSize: fontSize),
+          SizedBox(height: screenWidth * 0.01),
+          if (model.package.isNotEmpty)
+            Package(model: model, fontSize: fontSize),
         ],
       ),
+    );
+  }
+}
+
+class Package extends StatelessWidget {
+  final Skils_Model model;
+  final double fontSize;
+  const Package({super.key, required this.model, required this.fontSize});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Row(
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: screenWidth * 0.17,
+              child: Text(
+                "패키지: ",
+                style: Text_style.copyWith(fontSize: fontSize),
+              ),
+            ),
+          ],
+        ),
+
+        SizedBox(
+          width: screenWidth * 0.30,
+          child: Text(
+            model.package.join(" "),
+            style: Text_style.copyWith(fontSize: fontSize),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -228,9 +269,12 @@ class Platform extends StatelessWidget {
         Row(
           children:
               model.platform
-                  .map(
-                    (x) =>
-                        Text(x, style: Text_style.copyWith(fontSize: fontSize)),
+                  .expandIndexed(
+                    (i, x) => [
+                      Text(x, style: Text_style.copyWith(fontSize: fontSize)),
+                      if (model.platform.length - 1 != i)
+                        SizedBox(width: screenWidth * 0.02),
+                    ],
                   )
                   .toList(),
         ),
@@ -288,18 +332,24 @@ class Framwork extends StatelessWidget {
             style: Text_style.copyWith(fontSize: fontSize),
           ),
         ),
+
         SizedBox(
-          width: screenWidth * 0.17,
+          width: screenWidth * 0.3,
+
           child: Row(
             children:
-                model.Framwork.map(
-                  (x) => Text(
-                    x,
-                    style: Text_style.copyWith(
-                      fontSize: fontSize,
-                      color: DataUtils.SkillColor(skilname: x),
+                model.Framwork.expandIndexed(
+                  (i, x) => [
+                    Text(
+                      x,
+                      style: Text_style.copyWith(
+                        fontSize: fontSize,
+                        color: DataUtils.SkillColor(skilname: x),
+                      ),
                     ),
-                  ),
+                    if (i != model.Framwork.length - 1)
+                      SizedBox(width: screenWidth * 0.02),
+                  ],
                 ).toList(),
           ),
         ),
@@ -323,7 +373,7 @@ class Language extends StatelessWidget {
           child: Text("언어: ", style: Text_style.copyWith(fontSize: fontSize)),
         ),
         SizedBox(
-          width: screenWidth * 0.17,
+          width: screenWidth * 0.3,
           child: Row(
             children:
                 model.Language.expand(

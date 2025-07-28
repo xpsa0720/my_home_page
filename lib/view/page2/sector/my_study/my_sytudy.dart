@@ -1,6 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
+import 'package:my_page/component/text_component.dart';
 
 import '../../../../component/windows_xp_box_toggle_component.dart';
 
@@ -40,14 +41,8 @@ class WhiteHatSchool extends StatelessWidget {
           "assets/images/whitehatschool.png",
           width: screenWidth * 0.30,
         ),
-        Text(
-          "화이트햇 스쿨 1기 수료",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-        ),
-        Text(
-          "보안 프로젝트 PM",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-        ),
+        TextComponent(text: "화이트햇 스쿨 1기 수료"),
+        TextComponent(text: "보안 프로젝트 PM"),
       ],
     );
   }
@@ -91,14 +86,8 @@ class Inflearn extends StatelessWidget {
           width: screenWidth * 0.3,
         ),
         SizedBox(height: screenWidth * 0.03),
-        Text(
-          "인프런 수강 목록",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.035),
-        ),
-        Text(
-          "(총 108시간)",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
+        TextComponent(text: "인프런 수강 목록", ratio: 0.035),
+        TextComponent(text: "(총 108시간)", ratio: 0.025),
         Column(
           children:
               image_path_list

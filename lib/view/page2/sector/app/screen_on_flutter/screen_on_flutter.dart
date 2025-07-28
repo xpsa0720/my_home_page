@@ -87,7 +87,7 @@ class Descriptor extends StatelessWidget {
             style: Text_style.copyWith(fontSize: screenWidth * 0.020),
           ),
         ),
-        SizedBox(height: screenWidth * 0.02),
+        SizedBox(height: screenWidth * 0.05),
         Text(
           '개선된 구조',
           style: Text_style.copyWith(fontSize: screenWidth * 0.025),

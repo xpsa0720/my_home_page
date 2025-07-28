@@ -1,12 +1,20 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/component/web_portfolio_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
+import '../../../../../common/util/dat_util.dart';
+import '../../../../../component/border_picture.dart';
+import '../../../../../component/windows_xp_box_toggle_component.dart';
+import 'backend/backend.dart';
+import 'frontend/frontend.dart';
+import 'overview/overview.dart';
 
 class Appst extends StatelessWidget {
   Appst({super.key});
   final model = Skils_Model(
-    Framwork: ["Flutter"],
+    Framwork: ["Flutter", "NestJs"],
     Language: ["Dart", "TypeScript"],
     package: [],
     title: "APPST - 앱 개발자 커뮤니티",
@@ -21,6 +29,19 @@ class Appst extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    return Column(children: [WebPortfolioComponent(model: model)]);
+    final List<String> Title_list = ['개요', '프론트엔드(Flutter)', "백엔드(NestJs)"];
+    final List<Widget> Portfolio_page = [
+      Overview(model: model),
+      FrontEnd(model: model),
+      Backend(model: model),
+    ];
+    return Column(
+      children:
+          Portfolio_page.expandIndexed<Widget>(
+            (i, x) => [
+              WindowsXpBoxToggleComponent(title: Title_list[i], child: x),
+            ],
+          ).toList(),
+    );
   }
 }

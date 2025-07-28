@@ -8,8 +8,8 @@ import 'appst/appst.dart';
 class WebPortfolio extends StatelessWidget {
   WebPortfolio({super.key});
 
-  final List<String> Title_list = ['My Page', 'APPST'];
-  final List<Widget> Portfolio_page = [MyPage(), Appst()];
+  final List<String> Title_list = ['APPST', 'My page'];
+  final List<Widget> Portfolio_page = [Appst(), MyPage()];
 
   @override
   Widget build(BuildContext context) {

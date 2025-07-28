@@ -80,6 +80,7 @@ flutter:
     - assets/images/mindit/
     - assets/images/screen_on_flutter/
     - assets/images/date_snap/
+    - assets/images/appst/
 
   fonts:
     - family: neo

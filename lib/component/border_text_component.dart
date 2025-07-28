@@ -30,7 +30,6 @@ class BorderTextComponent extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'neo',
               fontSize: size ?? 18,
-              // color: Colors.white,
               foreground:
                   Paint()
                     ..style = PaintingStyle.stroke

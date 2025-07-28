@@ -51,49 +51,35 @@ class _SkillStackState extends State<SkillStack> {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.all(15.0),
-          child: SingleChildScrollView(
-            controller: controller,
-            scrollDirection: Axis.horizontal,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center, // ★ 수평 가운데 정렬
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "언어 및 프레임워크",
-                  style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-                ),
-                for (int row = 0; row < skil_list.length; row++) ...[
-                  SizedBox(height: screenWidth * 0.02),
-                  Row(
-                    mainAxisSize: MainAxisSize.min, // ★ Row가 내용 너비만 차지
-                    mainAxisAlignment: MainAxisAlignment.center, // ★ Row 내부도 정렬
-                    children: [
-                      for (int i = 0; i < skil_list[row].length; i++) ...[
-                        PixelImage(
-                          pic: skil_list[row][i][1],
-                          name: skil_list[row][i][0],
-                        ),
-                        if (i != skil_list[row].length - 1) SizedBox(width: 40),
-                      ],
-                    ],
-                  ),
-                  SizedBox(height: 40),
-                ],
-                SizedBox(height: 40),
-                DataBase(),
-                SizedBox(height: 40),
-
-                Text(
-                  "사용 툴",
-                  style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-                ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "언어 및 프레임워크",
+                style: Text_style.copyWith(fontSize: screenWidth * 0.025),
+              ),
+              for (int row = 0; row < skil_list.length; row++) ...[
                 SizedBox(height: screenWidth * 0.02),
-                Image.asset(
-                  "assets/images/postgresql.png",
-                  width: screenWidth * 0.25,
+                Row(
+                  mainAxisSize: MainAxisSize.min, //
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (int i = 0; i < skil_list[row].length; i++) ...[
+                      PixelImage(
+                        pic: skil_list[row][i][1],
+                        name: skil_list[row][i][0],
+                      ),
+                      if (i != skil_list[row].length - 1) SizedBox(width: 40),
+                    ],
+                  ],
                 ),
+                SizedBox(height: 40),
               ],
-            ),
+              SizedBox(height: 40),
+              DataBase(),
+              SizedBox(height: 40),
+            ],
           ),
         ),
       ),
@@ -127,10 +113,21 @@ class DataBase extends StatelessWidget {
       children: [
         Text(
           "Database",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
+          style: Text_style.copyWith(fontSize: screenWidth * 0.03),
         ),
         SizedBox(height: screenWidth * 0.02),
-        Image.asset("assets/images/postgresql.png", width: screenWidth * 0.25),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/postgresql.png",
+              width: screenWidth * 0.25,
+            ),
+            SizedBox(width: screenWidth * 0.05),
+            Image.asset("assets/images/sqlite.webp", width: screenWidth * 0.25),
+          ],
+        ),
       ],
     );
   }
