@@ -77,6 +77,9 @@ flutter:
     - assets/images/pixel/
     - assets/images/
     - assets/images/inflearn/
+    - assets/images/mindit/
+    - assets/images/screen_on_flutter/
+    - assets/images/date_snap/
 
   fonts:
     - family: neo

@@ -1,9 +1,9 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/common/util/dat_util.dart';
 
 import '../common/model/skils_model.dart';
-import 'border_text_component.dart';
 
 class AppPortfolioComponent extends StatefulWidget {
   final Skils_Model model;
@@ -48,16 +48,22 @@ class _AppPortfolioComponentState extends State<AppPortfolioComponent> {
                             Image_GIF(model: widget.model),
                           ],
                 ),
-                SizedBox(height: screenWidth * 0.06),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                SizedBox(height: screenWidth * 0.03),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(
-                      "사용한 패키지",
-                      style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-                    ),
+                    ...widget.model.descriptor
+                        .split("\n")
+                        .map(
+                          (x) => Text(
+                            x,
+                            style: Text_style.copyWith(
+                              fontSize: screenWidth * 0.020,
+                            ),
+                          ),
+                        ),
                   ],
-                ), // 두 Column 사이에 간격 주기
+                ),
               ],
             ),
           ],
@@ -132,16 +138,36 @@ class Descriptor extends StatelessWidget {
           Platform(model: model, fontSize: fontSize),
           SizedBox(height: screenWidth * 0.02),
           Personnel(model: model, fontSize: fontSize),
-          SizedBox(height: screenWidth * 0.24),
+          SizedBox(height: screenWidth * 0.03),
           Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              BorderTextComponent(
-                text: model.descriptor,
-                color: Colors.black,
-                size: fontSize * 0.7,
-                borderColor: Colors.transparent,
-                fontWeight: FontWeight.w300,
-                height: 1.6,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "패키지:",
+                    style: Text_style.copyWith(fontSize: screenWidth * 0.025),
+                  ),
+                  SizedBox(height: screenWidth * 0.01),
+                  ...model.package
+                      .expandIndexed(
+                        (i, x) => [
+                          Row(
+                            children: [
+                              SizedBox(width: screenWidth * 0.04),
+                              Text(
+                                x,
+                                style: Text_style.copyWith(
+                                  fontSize: screenWidth * 0.025,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      )
+                      .toList(),
+                ],
               ),
             ],
           ),
