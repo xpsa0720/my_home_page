@@ -10,7 +10,7 @@ class TextComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return Text(
+    return SelectableText(
       text,
       style: Text_style.copyWith(fontSize: ratio * screenWidth),
     );

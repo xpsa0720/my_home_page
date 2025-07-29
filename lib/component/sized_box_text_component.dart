@@ -18,7 +18,7 @@ class SizedBoxTextComponent extends StatelessWidget {
 
     return SizedBox(
       width: widthRatio * screenWidth,
-      child: Text(
+      child: SelectableText(
         text,
         style: Text_style.copyWith(fontSize: ratio * screenWidth),
       ),

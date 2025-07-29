@@ -13,7 +13,6 @@ class MyIntroduce extends StatefulWidget {
 
 class _MyIntroduceState extends State<MyIntroduce> {
   late ScrollController controller;
-  final double picture_width = 180;
   @override
   void initState() {
     // TODO: implement initState
@@ -30,20 +29,24 @@ class _MyIntroduceState extends State<MyIntroduce> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       child: WindowsXpBoxToggleComponent(
         title: '누구신가요?',
         child: Column(
           children: [
+            SizedBox(height: screenWidth * 0.02),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
+
               children: [
                 MyPicture(),
-                SizedBox(width: 10),
-
-                Explanation(picture_width: picture_width),
+                SizedBox(width: screenWidth * 0.02),
+                Explanation(picture_width: screenWidth * 0.2),
               ],
             ),
+
+            SizedBox(height: screenWidth * 0.02),
           ],
         ),
       ),
@@ -59,7 +62,7 @@ class Explanation extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: screenWidth * 0.7 - picture_width,
+      width: screenWidth * 0.55,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +73,7 @@ class Explanation extends StatelessWidget {
                 '''기술적 문제에 부딪혀도 현실과 타협하기보다는 인내심을 가지고 매일 밤을 새워가며 문제를 해결해 나갑니다.''',
             ratio: 0.02,
           ),
-          SizedBox(height: 20),
+          SizedBox(height: screenWidth * 0.02),
           SelectableText(
             'Github: https://github.com/xpsa0720',
             style: Text_style.copyWith(fontSize: screenWidth * 0.02),
@@ -79,9 +82,9 @@ class Explanation extends StatelessWidget {
             'Blog(Security): https://noobhack.tistory.com/',
             style: Text_style.copyWith(fontSize: screenWidth * 0.02),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: screenWidth * 0.02),
           TextComponent(text: '#xpsa #보안 #주니어 개발자', ratio: 0.015),
-          SizedBox(height: 5),
+          SizedBox(height: screenWidth * 0.01),
         ],
       ),
     );

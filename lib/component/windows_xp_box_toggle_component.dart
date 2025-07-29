@@ -20,18 +20,22 @@ class _WindowsXpBoxToggleComponentState
     extends State<WindowsXpBoxToggleComponent> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Theme(
-        data: Theme.of(context).copyWith(
-          dividerColor: Colors.transparent,
-          splashColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-        ),
-        child: WindowsExplorerComponent(
-          child: ExpansionTile(
-            title: Text(widget.title, style: TextStyle(fontSize: 25)),
-            children: [WindowsXpWhiteBoxComponent(child: widget.child)],
-          ),
+    return Theme(
+      data: Theme.of(context).copyWith(
+        dividerColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+      ),
+      child: WindowsExplorerComponent(
+        child: ExpansionTile(
+          title: Text(widget.title, style: TextStyle(fontSize: 25)),
+          children: [
+            AnimatedSize(
+              duration: Duration(milliseconds: 1000),
+              curve: Curves.ease,
+              child: WindowsXpWhiteBoxComponent(child: widget.child),
+            ),
+          ],
         ),
       ),
     );

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/component/app_portfolio_component.dart';
+import 'package:my_page/component/enter_text_component.dart';
+import 'package:my_page/component/image_component.dart';
+import 'package:my_page/component/link_text_component.dart';
 import 'package:my_page/component/picture_list_component.dart';
 import 'package:my_page/component/sized_box_text_component.dart';
+import 'package:my_page/component/text_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
 import '../../../../../common/text/style/text_style.dart';
@@ -71,6 +75,38 @@ class DataSnap extends StatelessWidget {
           text:
               "라벨 데이터는 shared_preferences를 사용하여 저장했으며, 화면 길이에 비례하는 비율 기반으로 저장했습니다. 라벨의 크기는 라벨이 화면에서 비중을 차지하는 비율을 저장했습니다.",
           widthRatio: 0.6,
+        ),
+        SizedBox(height: screenWidth * 0.1),
+        EnterTextComponent(
+          message: "현재 비공개 테스트를 진행중이며, 아래의 이메일 그룹에\n 가입하여 사전 체험을 하실 수 있습니다",
+          sizedBoxWidthRatio: 0.6,
+        ),
+        SizedBox(height: screenWidth * 0.03),
+        ImageComponent(
+          path: "assets/images/date_snap/date_snap_8.jpg",
+          widthRatio: 0.4,
+        ),
+        SizedBox(height: screenWidth * 0.03),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextComponent(text: "이메일 그룹: "),
+            LinkTextComponent(
+              text: "링크",
+              link: "https://groups.google.com/g/xpsa0720",
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextComponent(text: "Date Snap: "),
+            LinkTextComponent(
+              text: "링크",
+              link:
+                  "https://play.google.com/store/apps/details?id=com.xpsa.data_snap",
+            ),
+          ],
         ),
         SizedBox(height: screenWidth * 0.03),
       ],

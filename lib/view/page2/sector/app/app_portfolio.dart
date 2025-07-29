@@ -9,7 +9,7 @@ import 'data_snap/data_snap.dart';
 class AppPortfolio extends StatelessWidget {
   AppPortfolio({super.key});
 
-  final List<String> Title_list = ['Mind it', 'Screen on Flutter', 'Data Snap'];
+  final List<String> Title_list = ['Mind it', 'Screen on Flutter', 'Date Snap'];
   final List<Widget> Portfolio_page = [Mindit(), ScreenOnFlutter(), DataSnap()];
 
   @override
