@@ -68,14 +68,19 @@ class Explanation extends StatelessWidget {
           TextComponent(
             text:
                 '''기술적 문제에 부딪혀도 현실과 타협하기보다는 인내심을 가지고 매일 밤을 새워가며 문제를 해결해 나갑니다.''',
-            ratio: 0.015,
+            ratio: 0.02,
           ),
           SizedBox(height: 20),
           SelectableText(
             'Github: https://github.com/xpsa0720',
-            style: Text_style.copyWith(fontSize: screenWidth * 0.015),
+            style: Text_style.copyWith(fontSize: screenWidth * 0.02),
           ),
-          TextComponent(text: '#xpsa #보안 #주니어 개발자', ratio: 0.013),
+          SelectableText(
+            'Blog(Security): https://noobhack.tistory.com/',
+            style: Text_style.copyWith(fontSize: screenWidth * 0.02),
+          ),
+          SizedBox(height: 20),
+          TextComponent(text: '#xpsa #보안 #주니어 개발자', ratio: 0.015),
           SizedBox(height: 5),
         ],
       ),

@@ -122,7 +122,7 @@ class Descriptor extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      width: screenWidth * 0.42,
+      width: screenWidth * 0.40,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,

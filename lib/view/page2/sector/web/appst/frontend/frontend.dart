@@ -27,6 +27,7 @@ class FrontEnd extends StatelessWidget {
               SecurityIssue(),
               SizedBox(height: screenWidth * 0.1),
               TextComponent(ratio: 0.025, text: "Riverpod 종속 관계 (구현 완료)"),
+              SizedBox(height: screenWidth * 0.05),
               Image.asset(
                 "assets/images/appst/appst_5.png",
                 width: screenWidth * 0.70,
@@ -52,17 +53,14 @@ class SecurityIssue extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "flutter_secure_storage Web 보안 이슈",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
+        TextComponent(text: "flutter_secure_storage Web 보안 이슈", ratio: 0.025),
         SizedBox(height: screenWidth * 0.01),
         Image.asset(
           "assets/images/appst/appst_7.png",
           width: screenWidth * 0.66,
         ),
         SizedBox(height: screenWidth * 0.01),
-        EnterTextComponent(message: message, sizedBoxWidthRatio: 0.6),
+        EnterTextComponent(message: message, sizedBoxWidthRatio: 0.7),
       ],
     );
   }

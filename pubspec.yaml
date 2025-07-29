@@ -81,6 +81,10 @@ flutter:
     - assets/images/screen_on_flutter/
     - assets/images/date_snap/
     - assets/images/appst/
+    - assets/images/windows_xp/
+    - assets/images/tools/
+    - assets/images/database/
+    - assets/images/collaboration/
 
   fonts:
     - family: neo

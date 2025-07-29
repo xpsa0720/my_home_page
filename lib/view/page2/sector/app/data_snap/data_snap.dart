@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/component/app_portfolio_component.dart';
 import 'package:my_page/component/picture_list_component.dart';
+import 'package:my_page/component/sized_box_text_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
 import '../../../../../common/text/style/text_style.dart';
@@ -66,23 +67,12 @@ class DataSnap extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         SizedBox(height: screenWidth * 0.03),
-        SizedBox(
-          width: screenWidth * 0.6,
-          child: Text(
-            "라벨 데이터는 shared_preferences를 사용하여 저장했으며, 화면 길이에 비례하는 비율 기반으로 저장했습니다. 라벨의 크기는 라벨이 화면에서 비중을 차지하는 비율을 저장했습니다.",
-            style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-            textAlign: TextAlign.center,
-          ),
+        SizedBoxTextComponent(
+          text:
+              "라벨 데이터는 shared_preferences를 사용하여 저장했으며, 화면 길이에 비례하는 비율 기반으로 저장했습니다. 라벨의 크기는 라벨이 화면에서 비중을 차지하는 비율을 저장했습니다.",
+          widthRatio: 0.6,
         ),
         SizedBox(height: screenWidth * 0.03),
-        // SizedBox(
-        //   width: screenWidth * 0.6,
-        //   child: Text(
-        //     "현재 비공개 테스트 중이기 때문에 해당 링크에서 베타 버전을 사용하실 수 있습니다.",
-        //     style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-        //     textAlign: TextAlign.center,
-        //   ),
-        // ),
       ],
     );
   }

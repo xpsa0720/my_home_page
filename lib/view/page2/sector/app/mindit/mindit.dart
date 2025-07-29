@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_page/component/text_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
 import '../../../../../common/text/style/text_style.dart';
@@ -35,11 +36,11 @@ class Mindit extends StatelessWidget {
     return Column(
       children: [
         AppPortfolioComponent(model: model),
-        SizedBox(height: screenWidth * 0.04),
+        SizedBox(height: screenWidth * 0.08),
         ScreenShot(),
-        SizedBox(height: screenWidth * 0.04),
+        SizedBox(height: screenWidth * 0.08),
         Provider(),
-        SizedBox(height: screenWidth * 0.04),
+        SizedBox(height: screenWidth * 0.08),
         LockScreen(),
       ],
     );
@@ -62,7 +63,7 @@ class ScreenShot extends StatelessWidget {
       ],
       [
         "assets/images/mindit/mindit_2.jpg",
-        "assets/images/screen_on_flutter_test.jpg",
+        "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
       ],
     ];
     final screenWidth = MediaQuery.of(context).size.width;
@@ -83,16 +84,13 @@ class Provider extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        Text(
-          "상태관리 종속 관계",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
+        TextComponent(text: "상태관리 종속 관계", ratio: 0.025),
         SizedBox(height: screenWidth * 0.04),
         Image.asset(
           "assets/images/mindit/mindit_provider_1.png",
           width: screenWidth * 0.6,
         ),
-        SizedBox(height: screenWidth * 0.06),
+        SizedBox(height: screenWidth * 0.1),
         Image.asset(
           "assets/images/mindit/mindit_provider_2.png",
           width: screenWidth * 0.6,
@@ -110,21 +108,15 @@ class LockScreen extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        Text(
-          "add-to-app 기술을 이용한 락 스크린",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
-        Text(
-          "(Screen on Flutter 참고)",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
+        TextComponent(text: "add-to-app 기술을 이용한 락 스크린", ratio: 0.025),
+        TextComponent(text: "(Screen on Flutter 참고)", ratio: 0.025),
         SizedBox(height: screenWidth * 0.03),
         Container(
           decoration: BoxDecoration(
             border: Border.all(width: 2, color: Colors.black),
           ),
           child: Image.asset(
-            "assets/images/screen_on_flutter_test.jpg",
+            "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
             width: screenWidth / 4,
           ),
         ),

@@ -81,7 +81,7 @@ class Descriptor extends StatelessWidget {
         SizedBoxTextComponent(
           widthRatio: 0.55,
           text:
-              "appst는 서로 돕는 웹이기 때문에 자신의 앱을 설치한 횟수와 타인의 앱을 설치한 횟수를 비율로 계산한 점수 시스템을 도입할 예정입니다.",
+              "appst는 서로 돕는 공간이기 때문에 자신의 앱을 설치한 횟수와 타인의 앱을 설치한 횟수를 비율로 계산한 점수 시스템을 도입할 예정입니다.",
         ),
         SizedBoxComponent(heightRatio: 0.03),
       ],

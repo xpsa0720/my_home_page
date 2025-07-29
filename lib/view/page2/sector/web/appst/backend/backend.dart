@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_page/component/image_component.dart';
 import 'package:my_page/component/text_component.dart';
 
 import '../../../../../../common/model/skils_model.dart';
 import '../../../../../../common/text/style/text_style.dart';
-import '../../../../../../component/border_picture.dart';
 
 class Backend extends StatelessWidget {
   final Skils_Model model;
@@ -18,16 +18,53 @@ class Backend extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              SizedBox(height: screenWidth * 0.02),
+              SizedBox(height: screenWidth * 0.04),
+
               // Design(),
               // SizedBox(height: screenWidth * 0.04),
+              Architecture(),
+              SizedBox(height: screenWidth * 0.1),
+              DataBase(),
+              SizedBox(height: screenWidth * 0.1),
+              NestJS(),
+              SizedBox(height: screenWidth * 0.05),
               Current(),
               SizedBox(height: screenWidth * 0.1),
-              Architecture(),
-              SizedBox(height: screenWidth * 0.02),
             ],
           ),
         ),
+      ],
+    );
+  }
+}
+
+class NestJS extends StatelessWidget {
+  const NestJS({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        TextComponent(ratio: 0.03, text: "NestJS 요청-응답 Lifecycle"),
+        SizedBox(height: screenWidth * 0.02),
+        ImageComponent(path: "assets/images/appst/appst_8.png"),
+      ],
+    );
+  }
+}
+
+class DataBase extends StatelessWidget {
+  const DataBase({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    return Column(
+      children: [
+        TextComponent(ratio: 0.03, text: "DataBase ERD(현재)"),
+        SizedBox(height: screenWidth * 0.02),
+        ImageComponent(path: "assets/images/appst/appst_erd.png"),
       ],
     );
   }
@@ -49,10 +86,7 @@ class Architecture extends StatelessWidget {
 
     return Column(
       children: [
-        Text(
-          "아키텍쳐 개요",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.03),
-        ),
+        TextComponent(text: "아키텍쳐 개요", ratio: 0.03),
         SizedBox(height: screenWidth * 0.02),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -106,25 +140,24 @@ class Current extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final message = "Mutual Install System 구현(개요 참고)";
     final success_task = [
-      "로그인 기능",
-      "회원 가입 기능",
-      "회원 가입 이메일 인증",
-      "설치 인증 요청",
-      "설치 인증 확인",
-      "게시물 업로드",
-      "게시물 삭제",
+      "로그인 기능(JWT 인증)",
+      "회원 가입 기능, 이메일 인증",
+      "설치 인증 요청 및 확인",
+      "게시물 업로드,삭제",
     ];
     return Column(
       children: [
-        TextComponent(ratio: 0.025, text: "현재 완료한 작업"),
+        TextComponent(ratio: 0.03, text: "현재 완료한 작업"),
         SizedBox(height: screenWidth * 0.01),
-        ...success_task.map((x) => TextComponent(text: x)).toList(),
+        ...success_task
+            .map((x) => TextComponent(text: x, ratio: 0.025))
+            .toList(),
         SizedBox(height: screenWidth * 0.1),
-        TextComponent(ratio: 0.025, text: "현재 진행중인 작업"),
+        TextComponent(ratio: 0.03, text: "현재 진행중인 작업"),
         SizedBox(height: screenWidth * 0.02),
         ...message
             .split("\n")
-            .map((x) => TextComponent(text: x, ratio: 0.02))
+            .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
         Image.asset(
           "assets/images/appst/appst_4.png",

@@ -1,11 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:my_page/common/text/style/text_style.dart';
-import 'package:my_page/component/web_portfolio_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
-import '../../../../../common/util/dat_util.dart';
-import '../../../../../component/border_picture.dart';
 import '../../../../../component/windows_xp_box_toggle_component.dart';
 import 'backend/backend.dart';
 import 'frontend/frontend.dart';
@@ -19,9 +15,8 @@ class Appst extends StatelessWidget {
     package: [],
     title: "APPST - 앱 개발자 커뮤니티",
     descriptor: "플레이 스토어 앱 개발자를 위한 커뮤니티입니다.\n비공개 테스트를 쉽게 하기 위해 만든 웹 서비스입니다.",
-
     Language_skil: [],
-    gif_path: "assets/images/appst.png",
+    gif_path: "assets/images/appst/appst_6.png",
     isMaking: true,
     isRight: true,
     platform: ['Web', 'Android'],

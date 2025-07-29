@@ -77,7 +77,7 @@ class _Page2State extends State<Page2> with TickerProviderStateMixin {
                       childs: [
                         MyIntroduce(),
                         SkillStack(),
-                        CodingStyle(),
+                        // CodingStyle(),
                         AppPortfolio(),
                         WebPortfolio(),
                         MySytudy(),
