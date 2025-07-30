@@ -8,7 +8,8 @@ class MyPage extends StatelessWidget {
   final model = Skils_Model(
     Framwork: ["Flutter"],
     Language: ["Dart"],
-    package: ["Provider"],
+    package: [],
+    git_link: "https://github.com/xpsa0720/my_home_page",
     title: "My Page - 내 페이지",
     descriptor: "처음으로 만들어본 웹 페이지 입니다.\nWindows xp을 영감을 받아 만들어졌습니다.",
     Language_skil: [],

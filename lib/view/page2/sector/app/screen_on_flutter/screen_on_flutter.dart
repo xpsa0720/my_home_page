@@ -17,7 +17,7 @@ class ScreenOnFlutter extends StatelessWidget {
     package: [],
     descriptor:
         "Flutter을 위한 락 스크린 패키지입니다.\n락 스크린은 kotlin으로 구현해야 하지만\n플러터 액티비티와 플러터 엔진을 사용하여\nFlutter 위젯을 보여줍니다",
-
+    git_link: "https://github.com/xpsa0720/screen_on_flutter",
     Language_skil: [],
     gif_path: "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
     isRight: false,

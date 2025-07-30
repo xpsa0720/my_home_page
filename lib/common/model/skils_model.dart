@@ -5,6 +5,7 @@ class Skils_Model {
   final List<String> Language_skil;
   final String descriptor;
   final String gif_path;
+  final String? git_link;
   final List<String> platform;
   final List<String> package;
   final bool isRight;
@@ -22,6 +23,7 @@ class Skils_Model {
     required this.platform,
     required this.personnel,
     required this.package,
+    this.git_link,
     this.isMaking = false,
   });
 }

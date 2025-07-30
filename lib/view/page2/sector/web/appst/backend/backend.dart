@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_page/component/git_link_text_component.dart';
 import 'package:my_page/component/image_component.dart';
 import 'package:my_page/component/text_component.dart';
 
@@ -23,6 +24,13 @@ class Backend extends StatelessWidget {
               // Design(),
               // SizedBox(height: screenWidth * 0.04),
               Architecture(),
+              SizedBox(height: screenWidth * 0.02),
+
+              GitLinkTextComponent(
+                text: "링크",
+                link: "https://github.com/xpsa0720/appst_backend",
+                ratio: 0.03,
+              ),
               SizedBox(height: screenWidth * 0.1),
               DataBase(),
               SizedBox(height: screenWidth * 0.1),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_page/component/text_component.dart';
 
 import '../../../../../common/model/skils_model.dart';
-import '../../../../../common/text/style/text_style.dart';
 import '../../../../../component/app_portfolio_component.dart';
 import '../../../../../component/picture_list_component.dart';
 
@@ -19,6 +18,7 @@ class Mindit extends StatelessWidget {
       "sqflite",
       "json_annotation",
     ],
+    git_link: "https://github.com/xpsa0720/mindit",
     title: "Mindit - 습관 트래커 앱",
     descriptor:
         "큰 발전을 이룰수 있었던 개인 프로젝트입니다.\n처음으로 패키지를 만든 경험이 되었으며\n화면을 감지하여 락 스크린을 구현했습니다.",

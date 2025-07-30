@@ -5,6 +5,7 @@ import 'package:my_page/component/text_component.dart';
 import '../../../../../../common/model/skils_model.dart';
 import '../../../../../../common/text/style/text_style.dart';
 import '../../../../../../component/enter_text_component.dart';
+import '../../../../../../component/git_link_text_component.dart';
 
 class FrontEnd extends StatelessWidget {
   final Skils_Model model;
@@ -20,8 +21,7 @@ class FrontEnd extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: screenWidth * 0.02),
-
-              Current(),
+              Current(model: model),
               SizedBox(height: screenWidth * 0.05),
               SecurityIssue(),
               SizedBox(height: screenWidth * 0.1),
@@ -66,7 +66,8 @@ class SecurityIssue extends StatelessWidget {
 }
 
 class Current extends StatelessWidget {
-  const Current({super.key});
+  final Skils_Model model;
+  const Current({super.key, required this.model});
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +87,8 @@ class Current extends StatelessWidget {
           width: screenWidth * 0.6,
           path: "assets/images/appst/appst_6.png",
         ),
+        SizedBox(height: screenWidth * 0.02),
+        GitLinkTextComponent(text: "링크", link: model.git_link!, ratio: 0.03),
         SizedBox(height: screenWidth * 0.05),
         Text(
           "현재 완료한 작업",

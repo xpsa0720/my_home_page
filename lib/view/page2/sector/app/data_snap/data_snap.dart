@@ -23,6 +23,7 @@ class DataSnap extends StatelessWidget {
       "image_gallery_saver",
       "http",
     ],
+    git_link: "https://github.com/xpsa0720/date_snap",
     title: "Date Snap - 라벨 삽입 앱",
     descriptor:
         "날짜와 라벨을 삽입하는 앱 입니다.\n라벨의 위치는 디스플레이의 가로 세로 비율을\n참고하여 유연하게 위치를 설정합니다.",

@@ -36,6 +36,7 @@ class _WindowsXpBoxToggleComponentState
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
       ),
+
       child: WindowsExplorerComponent(
         child: Container(
           width: double.infinity,
@@ -54,7 +55,7 @@ class _WindowsXpBoxToggleComponentState
                     });
                   },
                   child: SizedBox(
-                    width: screenWidth * 0.6,
+                    width: screenWidth * 0.8,
                     child: Text(
                       widget.title,
                       style: const TextStyle(fontSize: 25),

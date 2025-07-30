@@ -2,8 +2,10 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/common/util/dat_util.dart';
+import 'package:my_page/component/sized_box_text_component.dart';
 
 import '../common/model/skils_model.dart';
+import 'link_text_component.dart';
 
 class WebPortfolioComponent extends StatefulWidget {
   final Skils_Model model;
@@ -179,10 +181,28 @@ class SkillDescriptor extends StatelessWidget {
           SizedBox(height: screenWidth * 0.01),
           Personnel(model: model, fontSize: fontSize),
           SizedBox(height: screenWidth * 0.01),
+          if (model.git_link != null) GitLink(model: model),
+          SizedBox(height: screenWidth * 0.01),
           if (model.package.isNotEmpty)
             Package(model: model, fontSize: fontSize),
         ],
       ),
+    );
+  }
+}
+
+class GitLink extends StatelessWidget {
+  final Skils_Model model;
+  const GitLink({super.key, required this.model});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        SizedBoxTextComponent(text: "Github: ", ratio: 0.03, widthRatio: 0.17),
+        LinkTextComponent(text: "링크", link: model.git_link!, ratio: 0.025),
+      ],
     );
   }
 }
