@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/data/data.dart';
+
 class SizedBoxComponent extends StatelessWidget {
   final double? widthRatio;
   final double? heightRatio;
@@ -7,10 +9,9 @@ class SizedBoxComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: widthRatio == null ? 0 : screenWidth * widthRatio!,
-      height: heightRatio == null ? 0 : screenWidth * heightRatio!,
+      width: widthRatio == null ? 0 : baseWidth * widthRatio!,
+      height: heightRatio == null ? 0 : baseWidth * heightRatio!,
     );
   }
 }

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_page/router/router.dart';
+import 'package:my_page/page/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  debugPrintRebuildDirtyWidgets = true;
   runApp(
-    ProviderScope(
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerConfig: MainRouter,
-        theme: ThemeData(fontFamily: 'neo'),
-      ),
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'neo'),
+      home: Home(),
     ),
   );
 }

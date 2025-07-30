@@ -3,8 +3,8 @@ import 'package:my_page/component/git_link_text_component.dart';
 import 'package:my_page/component/image_component.dart';
 import 'package:my_page/component/text_component.dart';
 
+import '../../../../../../common/data/data.dart';
 import '../../../../../../common/model/skils_model.dart';
-import '../../../../../../common/text/style/text_style.dart';
 
 class Backend extends StatelessWidget {
   final Skils_Model model;
@@ -12,32 +12,31 @@ class Backend extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Container(
           width: double.infinity,
           child: Column(
             children: [
-              SizedBox(height: screenWidth * 0.04),
+              SizedBox(height: baseWidth * 0.04),
 
               // Design(),
-              // SizedBox(height: screenWidth * 0.04),
+              // SizedBox(height: baseWidth * 0.04),
               Architecture(),
-              SizedBox(height: screenWidth * 0.02),
+              SizedBox(height: baseWidth * 0.02),
 
-              GitLinkTextComponent(
+              const GitLinkTextComponent(
                 text: "링크",
                 link: "https://github.com/xpsa0720/appst_backend",
                 ratio: 0.03,
               ),
-              SizedBox(height: screenWidth * 0.1),
+              SizedBox(height: baseWidth * 0.1),
               DataBase(),
-              SizedBox(height: screenWidth * 0.1),
+              SizedBox(height: baseWidth * 0.1),
               NestJS(),
-              SizedBox(height: screenWidth * 0.05),
+              SizedBox(height: baseWidth * 0.05),
               Current(),
-              SizedBox(height: screenWidth * 0.1),
+              SizedBox(height: baseWidth * 0.1),
             ],
           ),
         ),
@@ -51,12 +50,11 @@ class NestJS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        TextComponent(ratio: 0.03, text: "NestJS 요청-응답 Lifecycle"),
-        SizedBox(height: screenWidth * 0.02),
-        ImageComponent(path: "assets/images/appst/appst_8.png"),
+        const TextComponent(ratio: 0.03, text: "NestJS 요청-응답 Lifecycle"),
+        SizedBox(height: baseWidth * 0.02),
+        const ImageComponent(path: "assets/images/appst/appst_8.png"),
       ],
     );
   }
@@ -67,12 +65,11 @@ class DataBase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
-        TextComponent(ratio: 0.03, text: "DataBase ERD(현재)"),
-        SizedBox(height: screenWidth * 0.02),
-        ImageComponent(path: "assets/images/appst/appst_erd.png"),
+        const TextComponent(ratio: 0.03, text: "DataBase ERD(현재)"),
+        SizedBox(height: baseWidth * 0.02),
+        const ImageComponent(path: "assets/images/appst/appst_erd.png"),
       ],
     );
   }
@@ -90,46 +87,31 @@ class Architecture extends StatelessWidget {
       "NestJs + TypeORM",
       "AWS 배포(예정)",
     ];
-    final screenWidth = MediaQuery.of(context).size.width;
 
     return Column(
       children: [
-        TextComponent(text: "아키텍쳐 개요", ratio: 0.03),
-        SizedBox(height: screenWidth * 0.02),
+        const TextComponent(text: "아키텍쳐 개요", ratio: 0.03),
+        SizedBox(height: baseWidth * 0.02),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: screenWidth * 0.2,
+              width: baseWidth * 0.2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:
                     title
-                        .map(
-                          (x) => Text(
-                            x + ":",
-                            style: Text_style.copyWith(
-                              fontSize: screenWidth * 0.025,
-                            ),
-                          ),
-                        )
+                        .map((x) => TextComponent(text: x + ":", ratio: 0.025))
                         .toList(),
               ),
             ),
             SizedBox(
-              width: screenWidth * 0.25,
+              width: baseWidth * 0.25,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:
                     content
-                        .map(
-                          (x) => Text(
-                            x,
-                            style: Text_style.copyWith(
-                              fontSize: screenWidth * 0.025,
-                            ),
-                          ),
-                        )
+                        .map((x) => TextComponent(text: x, ratio: 0.025))
                         .toList(),
               ),
             ),
@@ -145,8 +127,7 @@ class Current extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final message = "Mutual Install System 구현(개요 참고)";
+    const message = "Mutual Install System 구현(개요 참고)";
     final success_task = [
       "로그인 기능(JWT 인증)",
       "회원 가입 기능, 이메일 인증",
@@ -155,24 +136,24 @@ class Current extends StatelessWidget {
     ];
     return Column(
       children: [
-        TextComponent(ratio: 0.03, text: "현재 완료한 작업"),
-        SizedBox(height: screenWidth * 0.01),
+        const TextComponent(ratio: 0.03, text: "현재 완료한 작업"),
+        SizedBox(height: baseWidth * 0.01),
         ...success_task
             .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
-        SizedBox(height: screenWidth * 0.1),
-        TextComponent(ratio: 0.03, text: "현재 진행중인 작업"),
-        SizedBox(height: screenWidth * 0.02),
+        SizedBox(height: baseWidth * 0.1),
+        const TextComponent(ratio: 0.03, text: "현재 진행중인 작업"),
+        SizedBox(height: baseWidth * 0.02),
         ...message
             .split("\n")
             .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
         Image.asset(
           "assets/images/appst/appst_4.png",
-          width: screenWidth * 0.6,
+          width: baseWidth * 0.6,
           fit: BoxFit.cover,
         ),
-        SizedBox(height: screenWidth * 0.01),
+        SizedBox(height: baseWidth * 0.01),
       ],
     );
   }

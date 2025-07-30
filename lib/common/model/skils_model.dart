@@ -5,14 +5,14 @@ class Skils_Model {
   final List<String> Language_skil;
   final String descriptor;
   final String gif_path;
-  final String? git_link;
+  final List<String> git_link;
   final List<String> platform;
   final List<String> package;
   final bool isRight;
   final bool isMaking;
   final int personnel;
 
-  Skils_Model({
+  const Skils_Model({
     required this.title,
     required this.Framwork,
     required this.descriptor,
@@ -23,7 +23,7 @@ class Skils_Model {
     required this.platform,
     required this.personnel,
     required this.package,
-    this.git_link,
+    required this.git_link,
     this.isMaking = false,
   });
 }

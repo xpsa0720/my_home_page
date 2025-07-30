@@ -1,4 +1,4 @@
-final String blue_screen_text =
+const String blue_screen_text =
     """*** STOP: 0x0000008E (0xC0000005, 0xBF803E47, 0xF7A366F0, 0x00000000)
 
 A problem has been detected and Windows has been shut down to prevent damage  

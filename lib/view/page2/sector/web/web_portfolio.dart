@@ -6,13 +6,12 @@ import '../../../../component/windows_xp_box_toggle_component.dart';
 import 'appst/appst.dart';
 
 class WebPortfolio extends StatelessWidget {
-  WebPortfolio({super.key});
-
-  final List<String> Title_list = ['APPST', 'My page'];
-  final List<Widget> Portfolio_page = [Appst(), MyPage()];
+  const WebPortfolio({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> Title_list = ['APPST (현재 진행중인 프로젝트)', 'My page'];
+    final List<Widget> Portfolio_page = [Appst(), MyPage()];
     return WindowsXpBoxToggleComponent(
       title: '웹 개발 포트폴리오',
       child: Column(

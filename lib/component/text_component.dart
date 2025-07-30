@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 
+import '../common/data/data.dart';
+
 class TextComponent extends StatelessWidget {
   final double ratio;
   final String text;
@@ -8,11 +10,9 @@ class TextComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return SelectableText(
       text,
-      style: Text_style.copyWith(fontSize: ratio * screenWidth),
+      style: Text_style.copyWith(fontSize: ratio * baseWidth),
     );
   }
 }

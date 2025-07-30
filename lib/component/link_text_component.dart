@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../common/data/data.dart';
+
 class LinkTextComponent extends StatelessWidget {
   final double ratio;
   final String text;
@@ -15,8 +17,6 @@ class LinkTextComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
@@ -32,8 +32,8 @@ class LinkTextComponent extends StatelessWidget {
         child: Text(
           text,
           style: Text_style.copyWith(
-            fontSize: ratio * screenWidth,
             color: Colors.blue,
+            fontSize: baseWidth * ratio,
           ),
         ),
       ),

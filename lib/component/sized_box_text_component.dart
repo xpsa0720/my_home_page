@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/style/text_style.dart';
 
+import '../common/data/data.dart';
+
 class SizedBoxTextComponent extends StatelessWidget {
   final double ratio;
   final double widthRatio;
@@ -14,13 +16,11 @@ class SizedBoxTextComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return SizedBox(
-      width: widthRatio * screenWidth,
+      width: widthRatio * baseWidth,
       child: SelectableText(
         text,
-        style: Text_style.copyWith(fontSize: ratio * screenWidth),
+        style: Text_style.copyWith(fontSize: ratio * baseWidth),
       ),
     );
   }

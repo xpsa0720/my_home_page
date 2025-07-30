@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_shadow/flutter_inner_shadow.dart';
 import 'package:intl/intl.dart';
+import 'package:my_page/common/text/style/text_style.dart';
 
 class Taskbar extends StatefulWidget {
   final double tabHeight;
@@ -68,7 +69,10 @@ class _TaskbarState extends State<Taskbar> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text("A", style: TextStyle(fontSize: 25, color: Colors.white)),
+                const Text(
+                  "A",
+                  style: TextStyle(fontSize: 25, color: Colors.white),
+                ),
                 SizedBox(width: 5),
                 TimeWidget(),
               ],
@@ -97,13 +101,13 @@ class _TaskbarState extends State<Taskbar> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Image.asset("assets/images/windows_xp/computer.png", width: 20),
-            SizedBox(width: 3),
+            const SizedBox(width: 3),
             Image.asset("assets/images/windows_xp/error.png", width: 20),
-            SizedBox(width: 2),
+            const SizedBox(width: 2),
             Image.asset("assets/images/windows_xp/sound.png", width: 20),
-            SizedBox(width: 10),
-            BoderText(text: _timeString),
-            SizedBox(width: 15),
+            const SizedBox(width: 10),
+            Text(_timeString, style: Text_style.copyWith(fontSize: 20)),
+            const SizedBox(width: 15),
           ],
         ),
       ),
@@ -127,7 +131,7 @@ class _TaskbarState extends State<Taskbar> {
         ),
         child: Row(
           children: [
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             SizedBox(
               width: 25,
               height: 25,
@@ -136,39 +140,11 @@ class _TaskbarState extends State<Taskbar> {
                 fit: BoxFit.fill,
               ),
             ),
-            SizedBox(width: 8),
-            BoderText(text: "시작"),
+            const SizedBox(width: 8),
+            Text("시작", style: Text_style.copyWith(fontSize: 20)),
           ],
         ),
       ),
-    );
-  }
-
-  BoderText({required String text}) {
-    return Stack(
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'neo',
-            fontSize: 18,
-            // color: Colors.white,
-            foreground:
-                Paint()
-                  ..style = PaintingStyle.stroke
-                  ..strokeWidth = 1.1
-                  ..color = Colors.black,
-          ),
-        ),
-        Text(
-          text,
-          style: TextStyle(
-            fontFamily: 'neo',
-            fontSize: 18,
-            color: Colors.white,
-          ),
-        ),
-      ],
     );
   }
 }

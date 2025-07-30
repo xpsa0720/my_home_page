@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../common/data/data.dart';
+
 class ImageComponent extends StatelessWidget {
   final double widthRatio;
   final String path;
@@ -13,12 +15,11 @@ class ImageComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Padding(
-      padding: EdgeInsets.all(screenWidth * paddingRatio),
+      padding: EdgeInsets.all(baseWidth * paddingRatio),
       child: Image.asset(
         path,
-        width: widthRatio * screenWidth,
+        width: widthRatio * baseWidth,
         fit: BoxFit.cover,
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_page/component/text_component.dart';
 
+import '../common/data/data.dart';
+
 class EnterTextComponent extends StatelessWidget {
   final String message;
   final double sizedBoxWidthRatio;
@@ -12,9 +14,8 @@ class EnterTextComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: screenWidth * 0.6,
+      width: baseWidth * 0.6,
       child: Column(
         children:
             message.split("\n").map((x) => TextComponent(text: x)).toList(),

@@ -1,26 +1,25 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:my_page/common/text/style/text_style.dart';
 import 'package:my_page/component/text_component.dart';
 
+import '../../../../common/data/data.dart';
 import '../../../../component/windows_xp_box_toggle_component.dart';
 
 class MySytudy extends StatelessWidget {
-  MySytudy({super.key});
+  const MySytudy({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return WindowsXpBoxToggleComponent(
       title: '내 학습',
       child: Container(
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: screenWidth * 0.06),
-            WhiteHatSchool(),
-            SizedBox(height: screenWidth * 0.06),
-            Inflearn(),
+            SizedBox(height: baseWidth * 0.06),
+            const WhiteHatSchool(),
+            SizedBox(height: baseWidth * 0.06),
+            const Inflearn(),
           ],
         ),
       ),
@@ -33,16 +32,15 @@ class WhiteHatSchool extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
           "assets/images/whitehatschool.png",
-          width: screenWidth * 0.30,
+          width: baseWidth * 0.30,
         ),
-        TextComponent(text: "화이트햇 스쿨 1기 수료"),
-        TextComponent(text: "보안 프로젝트 PM"),
+        const TextComponent(text: "화이트햇 스쿨 1기 수료"),
+        const TextComponent(text: "보안 프로젝트 PM"),
       ],
     );
   }
@@ -78,16 +76,15 @@ class Inflearn extends StatelessWidget {
       ["알고리즘 강의(딩코딩코)", "앱 마케팅 전략(프로그래밍좀비)"],
     ];
 
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Image.asset(
           "assets/images/inflearn/inflearn_logo.png",
-          width: screenWidth * 0.3,
+          width: baseWidth * 0.3,
         ),
-        SizedBox(height: screenWidth * 0.03),
-        TextComponent(text: "인프런 수강 목록", ratio: 0.035),
-        TextComponent(text: "(총 108시간)", ratio: 0.025),
+        SizedBox(height: baseWidth * 0.03),
+        const TextComponent(text: "인프런 수강 목록", ratio: 0.035),
+        const TextComponent(text: "(총 108시간)", ratio: 0.025),
         Column(
           children:
               image_path_list
@@ -104,12 +101,12 @@ class Inflearn extends StatelessWidget {
                                       discriptor: descriptor[i][j],
                                     ),
                                     if (j != ((descriptor[i].length) - 1))
-                                      SizedBox(width: screenWidth * 0.03),
+                                      SizedBox(width: baseWidth * 0.03),
                                   ],
                                 )
                                 .toList(),
                       ),
-                      SizedBox(height: screenWidth * 0.07),
+                      SizedBox(height: baseWidth * 0.07),
                     ],
                   )
                   .toList(),
@@ -130,20 +127,16 @@ class Inflearn_mini_component extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           SizedBox(
-            width: screenWidth * 0.3,
+            width: baseWidth * 0.3,
             child: Image.asset(path, fit: BoxFit.cover),
           ),
-          SizedBox(height: screenWidth * 0.01),
-          Text(
-            discriptor,
-            style: Text_style.copyWith(fontSize: screenWidth * 0.020),
-          ),
+          SizedBox(height: baseWidth * 0.01),
+          TextComponent(text: discriptor, ratio: 0.020),
         ],
       ),
     );

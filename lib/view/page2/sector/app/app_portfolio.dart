@@ -7,13 +7,21 @@ import '../../../../component/windows_xp_box_toggle_component.dart';
 import 'data_snap/data_snap.dart';
 
 class AppPortfolio extends StatelessWidget {
-  AppPortfolio({super.key});
-
-  final List<String> Title_list = ['Mind it', 'Screen on Flutter', 'Date Snap'];
-  final List<Widget> Portfolio_page = [Mindit(), ScreenOnFlutter(), DataSnap()];
+  const AppPortfolio({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> Title_list = [
+      'Mind it',
+      'Screen on Flutter',
+      'Date Snap',
+    ];
+    final List<Widget> Portfolio_page = [
+      Mindit(),
+      ScreenOnFlutter(),
+      DataSnap(),
+    ];
+
     return WindowsXpBoxToggleComponent(
       title: '앱 개발 포트폴리오',
       child: Column(

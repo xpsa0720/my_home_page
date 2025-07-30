@@ -11,7 +11,6 @@ class BorderPictureComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: Colors.black),

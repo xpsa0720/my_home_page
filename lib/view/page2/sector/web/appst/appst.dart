@@ -9,11 +9,14 @@ import 'overview/overview.dart';
 
 class Appst extends StatelessWidget {
   Appst({super.key});
-  final model = Skils_Model(
+  static const model = Skils_Model(
     Framwork: ["Flutter", "NestJs"],
     Language: ["Dart", "TypeScript"],
     package: [],
-    git_link: "https://github.com/xpsa0720/appst_frontend",
+    git_link: [
+      "https://github.com/xpsa0720/appst_frontend",
+      "https://github.com/xpsa0720/appst_backend",
+    ],
     title: "APPST - 앱 개발자 커뮤니티",
     descriptor: "플레이 스토어 앱 개발자를 위한 커뮤니티입니다.\n비공개 테스트를 쉽게 하기 위해 만든 웹 서비스입니다.",
     Language_skil: [],
@@ -25,8 +28,8 @@ class Appst extends StatelessWidget {
   );
   @override
   Widget build(BuildContext context) {
-    final List<String> Title_list = ['개요', '프론트엔드(Flutter)', "백엔드(NestJs)"];
-    final List<Widget> Portfolio_page = [
+    const List<String> Title_list = ['개요', '프론트엔드(Flutter)', "백엔드(NestJs)"];
+    const List<Widget> Portfolio_page = [
       Overview(model: model),
       FrontEnd(model: model),
       Backend(model: model),

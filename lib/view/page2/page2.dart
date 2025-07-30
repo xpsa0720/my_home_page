@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:my_page/common/text/blue_screen_text/blue_screen_text.dart';
 import 'package:my_page/common/text/style/text_style.dart';
@@ -11,72 +9,32 @@ import 'package:my_page/view/page2/sector/my_introduce/my_introduce.dart';
 import 'package:my_page/view/page2/sector/skill_stack/skill_stack.dart';
 import 'package:flutter/foundation.dart';
 
-class Page2 extends StatefulWidget {
+class Page2 extends StatelessWidget {
   const Page2({super.key});
 
   @override
-  State<Page2> createState() => _Page2State();
-}
-
-class _Page2State extends State<Page2> with TickerProviderStateMixin {
-  late ScrollController controller;
-  final typing_speed = Duration(milliseconds: 100);
-  String _displayedText = '';
-  int _currentIndex = 0;
-  Timer? _timer;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    controller = ScrollController();
-    _startTyping();
-  }
-
-  void _startTyping() {
-    _timer = Timer.periodic(typing_speed, (timer) {
-      if (_currentIndex < blue_screen_text.length) {
-        setState(() {
-          _displayedText += blue_screen_text[_currentIndex];
-          _currentIndex++;
-        });
-      } else {
-        _timer?.cancel();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    controller.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
+    double baseWidth = MediaQuery.of(context).size.width;
     if (!kIsWeb) {
-      screenWidth = screenWidth * 0.8;
+      baseWidth = baseWidth * 0.8;
     }
     return Stack(
       children: [
         Text(
-          _displayedText,
+          blue_screen_text,
           style: Text_style.copyWith(color: Colors.white, fontSize: 30),
         ),
         Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: screenWidth * 0.1),
+            padding: EdgeInsets.symmetric(vertical: baseWidth * 0.1),
             child: Container(
-              width: kIsWeb ? screenWidth / 1.2 : double.infinity,
+              width: kIsWeb ? baseWidth / 1.2 : double.infinity,
 
               child: WindowsExplorerComponent(
                 child: Column(
                   children: [
                     title(),
-                    content(
+                    const content(
                       childs: [
                         MyIntroduce(),
                         SkillStack(),
@@ -85,7 +43,6 @@ class _Page2State extends State<Page2> with TickerProviderStateMixin {
                         WebPortfolio(),
                         MySytudy(),
                       ],
-                      controller: controller,
                     ),
                   ],
                 ),
@@ -115,7 +72,7 @@ class title extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(width: 10),
-            Text(
+            const Text(
               "저를 소개합니다!",
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
@@ -128,8 +85,7 @@ class title extends StatelessWidget {
 
 class content extends StatelessWidget {
   final List<Widget> childs;
-  final ScrollController controller;
-  const content({super.key, required this.childs, required this.controller});
+  const content({super.key, required this.childs});
 
   @override
   Widget build(BuildContext context) {
@@ -146,12 +102,7 @@ class content extends StatelessWidget {
             left: BorderSide(color: Color(0xFF485052), width: 2),
           ),
         ),
-        child: ListView(
-          shrinkWrap: true,
-          scrollDirection: Axis.vertical,
-          controller: controller,
-          children: childs,
-        ),
+        child: Column(children: childs),
       ),
     );
   }

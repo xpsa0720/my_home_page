@@ -7,12 +7,12 @@ import 'package:my_page/component/picture_list_component.dart';
 import 'package:my_page/component/sized_box_text_component.dart';
 import 'package:my_page/component/text_component.dart';
 
+import '../../../../../common/data/data.dart';
 import '../../../../../common/model/skils_model.dart';
-import '../../../../../common/text/style/text_style.dart';
 
 class DataSnap extends StatelessWidget {
   DataSnap({super.key});
-  final model = Skils_Model(
+  static const model = Skils_Model(
     Framwork: ["Flutter"],
     Language: ["Dart"],
     package: [
@@ -23,7 +23,7 @@ class DataSnap extends StatelessWidget {
       "image_gallery_saver",
       "http",
     ],
-    git_link: "https://github.com/xpsa0720/date_snap",
+    git_link: ["https://github.com/xpsa0720/date_snap"],
     title: "Date Snap - 라벨 삽입 앱",
     descriptor:
         "날짜와 라벨을 삽입하는 앱 입니다.\n라벨의 위치는 디스플레이의 가로 세로 비율을\n참고하여 유연하게 위치를 설정합니다.",
@@ -50,48 +50,44 @@ class DataSnap extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         AppPortfolioComponent(model: model),
-        SizedBox(height: screenWidth * 0.04),
+        SizedBox(height: baseWidth * 0.04),
         PictureListComponent(
           list: screenshot_list,
-          PictureWidth: screenWidth * 0.3,
-          SizedBoxWidth: screenWidth * 0.02,
-          SizedBoxHeight: screenWidth * 0.04,
+          PictureWidth: baseWidth * 0.3,
+          SizedBoxWidth: baseWidth * 0.02,
+          SizedBoxHeight: baseWidth * 0.04,
         ),
-        SizedBox(height: screenWidth * 0.02),
-        Text(
-          "라벨 데이터 저장 방식",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
+        SizedBox(height: baseWidth * 0.02),
+        const TextComponent(text: "라벨 데이터 저장 방식", ratio: 0.025),
         Image.asset(
           "assets/images/date_snap/date_snap_7.png",
-          width: screenWidth * 0.7,
+          width: baseWidth * 0.7,
           fit: BoxFit.cover,
         ),
-        SizedBox(height: screenWidth * 0.03),
+        SizedBox(height: baseWidth * 0.03),
         SizedBoxTextComponent(
           text:
               "라벨 데이터는 shared_preferences를 사용하여 저장했으며, 화면 길이에 비례하는 비율 기반으로 저장했습니다. 라벨의 크기는 라벨이 화면에서 비중을 차지하는 비율을 저장했습니다.",
           widthRatio: 0.6,
         ),
-        SizedBox(height: screenWidth * 0.1),
+        SizedBox(height: baseWidth * 0.1),
         EnterTextComponent(
           message: "현재 비공개 테스트를 진행중이며, 아래의 이메일 그룹에\n 가입하여 사전 체험을 하실 수 있습니다",
           sizedBoxWidthRatio: 0.6,
         ),
-        SizedBox(height: screenWidth * 0.03),
-        ImageComponent(
+        SizedBox(height: baseWidth * 0.03),
+        const ImageComponent(
           path: "assets/images/date_snap/date_snap_8.jpg",
           widthRatio: 0.4,
         ),
-        SizedBox(height: screenWidth * 0.03),
+        SizedBox(height: baseWidth * 0.03),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextComponent(text: "이메일 그룹: "),
+            const TextComponent(text: "이메일 그룹: "),
             LinkTextComponent(
               text: "링크",
               link: "https://groups.google.com/g/xpsa0720",
@@ -101,7 +97,7 @@ class DataSnap extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextComponent(text: "Date Snap: "),
+            const TextComponent(text: "Date Snap: "),
             LinkTextComponent(
               text: "링크",
               link:
@@ -109,7 +105,7 @@ class DataSnap extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: screenWidth * 0.03),
+        SizedBox(height: baseWidth * 0.03),
       ],
     );
   }
