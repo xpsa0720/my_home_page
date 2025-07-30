@@ -6,7 +6,8 @@ import '../view/page2/page2.dart';
 class Home extends StatelessWidget {
   static String get routeFullPath => '/';
   static String get routePath => '';
-  const Home({super.key});
+  final _controller = ScrollController();
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {

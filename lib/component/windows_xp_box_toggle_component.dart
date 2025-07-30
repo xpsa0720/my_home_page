@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_page/component/windows_xp_box_component.dart';
 import 'package:my_page/component/windows_xp_white_box_component.dart';
 
-import '../common/data/data.dart';
-
 class WindowsXpBoxToggleComponent extends StatefulWidget {
   final Widget child;
   final String title;
@@ -31,6 +29,7 @@ class _WindowsXpBoxToggleComponentState
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Theme(
       data: Theme.of(context).copyWith(
         dividerColor: Colors.transparent,
@@ -56,7 +55,7 @@ class _WindowsXpBoxToggleComponentState
                     });
                   },
                   child: SizedBox(
-                    width: baseWidth * 0.8,
+                    width: screenWidth * 0.8,
                     child: Text(
                       widget.title,
                       style: const TextStyle(fontSize: 25),
@@ -72,7 +71,7 @@ class _WindowsXpBoxToggleComponentState
                   child: Align(
                     heightFactor: _expanded ? 1 : 0,
                     alignment: Alignment.topCenter,
-                    child: _cachedChild,
+                    child: RepaintBoundary(child: _cachedChild),
                   ),
                 ),
               ),

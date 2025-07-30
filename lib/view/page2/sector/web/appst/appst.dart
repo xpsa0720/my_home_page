@@ -8,7 +8,7 @@ import 'frontend/frontend.dart';
 import 'overview/overview.dart';
 
 class Appst extends StatelessWidget {
-  Appst({super.key});
+  const Appst({super.key});
   static const model = Skils_Model(
     Framwork: ["Flutter", "NestJs"],
     Language: ["Dart", "TypeScript"],

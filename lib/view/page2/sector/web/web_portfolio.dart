@@ -7,11 +7,10 @@ import 'appst/appst.dart';
 
 class WebPortfolio extends StatelessWidget {
   const WebPortfolio({super.key});
-
+  static const List<String> Title_list = ['APPST (현재 진행중인 프로젝트)', 'My page'];
+  static const List<Widget> Portfolio_page = [Appst(), MyPage()];
   @override
   Widget build(BuildContext context) {
-    final List<String> Title_list = ['APPST (현재 진행중인 프로젝트)', 'My page'];
-    final List<Widget> Portfolio_page = [Appst(), MyPage()];
     return WindowsXpBoxToggleComponent(
       title: '웹 개발 포트폴리오',
       child: Column(

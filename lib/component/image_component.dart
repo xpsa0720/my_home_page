@@ -21,6 +21,7 @@ class ImageComponent extends StatelessWidget {
         path,
         width: widthRatio * baseWidth,
         fit: BoxFit.cover,
+        gaplessPlayback: true,
       ),
     );
   }

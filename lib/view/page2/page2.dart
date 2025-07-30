@@ -33,12 +33,11 @@ class Page2 extends StatelessWidget {
               child: WindowsExplorerComponent(
                 child: Column(
                   children: [
-                    title(),
+                    const title(),
                     const content(
                       childs: [
                         MyIntroduce(),
                         SkillStack(),
-                        // CodingStyle(),
                         AppPortfolio(),
                         WebPortfolio(),
                         MySytudy(),
@@ -64,8 +63,8 @@ class title extends StatelessWidget {
       padding: const EdgeInsets.all(3.0),
       child: Container(
         height: 40,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
+        decoration: const BoxDecoration(
+          gradient: const LinearGradient(
             colors: [Color(0xFF0A246A), Color(0xFFA6CAF0)],
           ),
         ),

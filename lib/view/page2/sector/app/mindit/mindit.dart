@@ -7,7 +7,7 @@ import '../../../../../component/app_portfolio_component.dart';
 import '../../../../../component/picture_list_component.dart';
 
 class Mindit extends StatelessWidget {
-  Mindit({super.key});
+  const Mindit({super.key});
   static const model = Skils_Model(
     Framwork: ["Flutter"],
     Language: ["Dart"],

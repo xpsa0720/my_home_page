@@ -63,7 +63,7 @@ class Title extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [TextComponent(text: model.title, ratio: 0.020)]);
+    return Row(children: [TextComponent(text: model.title, ratio: 0.03)]);
   }
 }
 
@@ -81,7 +81,11 @@ class Image_GIF extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(width: 2, color: Colors.black),
           ),
-          child: Image.asset(model.gif_path, width: baseWidth / 4),
+          child: Image.asset(
+            model.gif_path,
+            width: baseWidth / 4,
+            gaplessPlayback: true,
+          ),
         ),
       ],
     );
@@ -100,14 +104,11 @@ class Descriptor extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Column(children: []),
-          SizedBox(height: baseWidth * 0.04),
+          SizedBox(height: baseWidth * 0.08),
           Language(model: model),
           SizedBox(height: baseWidth * 0.02),
           Framwork(model: model),
           SizedBox(height: baseWidth * 0.02),
-          // Library(model: model, fontSize: fontSize),
-          // SizedBox(height: baseWidth * 0.02),
           Platform(model: model),
           SizedBox(height: baseWidth * 0.02),
           Personnel(model: model),

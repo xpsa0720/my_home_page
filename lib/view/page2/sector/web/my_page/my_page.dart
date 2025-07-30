@@ -4,7 +4,7 @@ import 'package:my_page/component/web_portfolio_component.dart';
 import '../../../../../common/model/skils_model.dart';
 
 class MyPage extends StatelessWidget {
-  MyPage({super.key});
+  const MyPage({super.key});
   static const model = Skils_Model(
     Framwork: ["Flutter"],
     Language: ["Dart"],

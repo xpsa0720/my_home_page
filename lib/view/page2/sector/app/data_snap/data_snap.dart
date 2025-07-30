@@ -11,7 +11,7 @@ import '../../../../../common/data/data.dart';
 import '../../../../../common/model/skils_model.dart';
 
 class DataSnap extends StatelessWidget {
-  DataSnap({super.key});
+  const DataSnap({super.key});
   static const model = Skils_Model(
     Framwork: ["Flutter"],
     Language: ["Dart"],
@@ -34,7 +34,7 @@ class DataSnap extends StatelessWidget {
     platform: ['Android'],
     personnel: 1,
   );
-  final screenshot_list = [
+  static const screenshot_list = [
     [
       "assets/images/date_snap/date_snap_1.jpg",
       "assets/images/date_snap/date_snap_2.jpg",

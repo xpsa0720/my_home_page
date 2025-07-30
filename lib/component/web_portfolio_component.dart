@@ -88,7 +88,12 @@ class Image_GIF extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(width: 2, color: Colors.black),
           ),
-          child: Image.asset(gif_path, width: baseWidth / 2, fit: BoxFit.cover),
+          child: Image.asset(
+            gif_path,
+            width: baseWidth / 2,
+            fit: BoxFit.cover,
+            gaplessPlayback: true,
+          ),
         ),
       ],
     );

@@ -37,6 +37,7 @@ class PictureListComponent extends StatelessWidget {
                                   child: Image.asset(
                                     list[i][j],
                                     width: PictureWidth,
+                                    gaplessPlayback: true,
                                   ),
                                 ),
                                 if (j != ((list[i].length) - 1))

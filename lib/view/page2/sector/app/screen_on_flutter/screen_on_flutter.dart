@@ -8,7 +8,7 @@ import '../../../../../common/model/skils_model.dart';
 import '../../../../../component/app_portfolio_component.dart';
 
 class ScreenOnFlutter extends StatelessWidget {
-  ScreenOnFlutter({super.key});
+  const ScreenOnFlutter({super.key});
 
   static const model = Skils_Model(
     Framwork: ["Flutter"],

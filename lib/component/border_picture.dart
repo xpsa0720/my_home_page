@@ -15,7 +15,12 @@ class BorderPictureComponent extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(width: 2, color: Colors.black),
       ),
-      child: Image.asset(path, width: width, fit: BoxFit.cover),
+      child: Image.asset(
+        path,
+        width: width,
+        fit: BoxFit.cover,
+        gaplessPlayback: true,
+      ),
     );
   }
 }
