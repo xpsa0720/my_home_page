@@ -20,8 +20,7 @@ class FrontEnd extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: screenWidth * 0.02),
-              // Design(),
-              // SizedBox(height: screenWidth * 0.04),
+
               Current(),
               SizedBox(height: screenWidth * 0.05),
               SecurityIssue(),
@@ -79,13 +78,6 @@ class Current extends StatelessWidget {
 
     return Column(
       children: [
-        Text(
-          "현재 완료한 작업",
-          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
-        ),
-        SizedBox(height: screenWidth * 0.01),
-        ...success_task.map((x) => TextComponent(text: x)).toList(),
-        SizedBox(height: screenWidth * 0.1),
         TextComponent(text: "현재 진행중인 작업", ratio: 0.025),
         SizedBox(height: screenWidth * 0.02),
         EnterTextComponent(message: message),
@@ -94,6 +86,13 @@ class Current extends StatelessWidget {
           width: screenWidth * 0.6,
           path: "assets/images/appst/appst_6.png",
         ),
+        SizedBox(height: screenWidth * 0.05),
+        Text(
+          "현재 완료한 작업",
+          style: Text_style.copyWith(fontSize: screenWidth * 0.025),
+        ),
+        SizedBox(height: screenWidth * 0.01),
+        ...success_task.map((x) => TextComponent(text: x)).toList(),
         SizedBox(height: screenWidth * 0.1),
       ],
     );
