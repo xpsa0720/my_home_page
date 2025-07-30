@@ -23,14 +23,14 @@ class CodingStyle extends StatelessWidget {
           children: [
             SizedBox(height: baseWidth * 0.05),
             const TextComponent(text: "코드는 단순해야 한다.", ratio: 0.03),
-            const ImageComponent(path: "assets/images/hard_coding.png"),
+            const ImageComponent(path: "assets/images/hard_coding.webp"),
             SizedBox(height: baseWidth * 0.03),
             EnterTextComponent(message: message1),
             SizedBox(height: baseWidth * 0.08),
             const TextComponent(text: "반복되는 패턴은 컴포넌트화", ratio: 0.03),
             SizedBox(height: baseWidth * 0.01),
             const ImageComponent(
-              path: "assets/images/component.png",
+              path: "assets/images/component.webp",
               widthRatio: 0.5,
             ),
             SizedBox(height: baseWidth * 0.02),

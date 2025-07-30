@@ -27,7 +27,7 @@ class FrontEnd extends StatelessWidget {
               const TextComponent(ratio: 0.025, text: "Riverpod 종속 관계 (구현 완료)"),
               SizedBox(height: baseWidth * 0.05),
               Image.asset(
-                "assets/images/appst/appst_5.png",
+                "assets/images/appst/appst_5.webp",
                 width: baseWidth * 0.70,
               ),
               SizedBox(height: baseWidth * 0.02),
@@ -55,7 +55,10 @@ class SecurityIssue extends StatelessWidget {
           ratio: 0.025,
         ),
         SizedBox(height: baseWidth * 0.01),
-        Image.asset("assets/images/appst/appst_7.png", width: baseWidth * 0.66),
+        Image.asset(
+          "assets/images/appst/appst_7.webp",
+          width: baseWidth * 0.66,
+        ),
         SizedBox(height: baseWidth * 0.01),
         EnterTextComponent(message: message, sizedBoxWidthRatio: 0.7),
       ],
@@ -82,7 +85,7 @@ class Current extends StatelessWidget {
         SizedBox(height: baseWidth * 0.01),
         BorderPictureComponent(
           width: baseWidth * 0.6,
-          path: "assets/images/appst/appst_6.png",
+          path: "assets/images/appst/appst_6.webp",
         ),
         SizedBox(height: baseWidth * 0.02),
         GitLinkTextComponent(

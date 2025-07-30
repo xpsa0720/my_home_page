@@ -36,7 +36,7 @@ class WhiteHatSchool extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Image.asset(
-          "assets/images/whitehatschool.png",
+          "assets/images/whitehatschool.webp",
           width: baseWidth * 0.30,
         ),
         const TextComponent(text: "화이트햇 스쿨 1기 수료"),
@@ -53,16 +53,16 @@ class Inflearn extends StatelessWidget {
   Widget build(BuildContext context) {
     final image_path_list = [
       [
-        "assets/images/inflearn/javascript.png",
-        "assets/images/inflearn/typescript.png",
+        "assets/images/inflearn/javascript.webp",
+        "assets/images/inflearn/typescript.webp",
       ],
       [
-        "assets/images/inflearn/flutter_1.png",
-        "assets/images/inflearn/flutter_2.png",
+        "assets/images/inflearn/flutter_1.webp",
+        "assets/images/inflearn/flutter_2.webp",
       ],
       [
-        "assets/images/inflearn/nestjs.png",
-        "assets/images/inflearn/kotlin.png",
+        "assets/images/inflearn/nestjs.webp",
+        "assets/images/inflearn/kotlin.webp",
       ],
       [
         "assets/images/inflearn/alrgorithm.gif",
@@ -79,7 +79,7 @@ class Inflearn extends StatelessWidget {
     return Column(
       children: [
         Image.asset(
-          "assets/images/inflearn/inflearn_logo.png",
+          "assets/images/inflearn/inflearn_logo.webp",
           width: baseWidth * 0.3,
         ),
         SizedBox(height: baseWidth * 0.03),

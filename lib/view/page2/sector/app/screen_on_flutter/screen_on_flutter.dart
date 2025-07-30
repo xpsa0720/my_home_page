@@ -19,7 +19,7 @@ class ScreenOnFlutter extends StatelessWidget {
         "Flutter을 위한 락 스크린 패키지입니다.\n락 스크린은 kotlin으로 구현해야 하지만\n플러터 액티비티와 플러터 엔진을 사용하여\nFlutter 위젯을 보여줍니다",
     git_link: ["https://github.com/xpsa0720/screen_on_flutter"],
     Language_skil: [],
-    gif_path: "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
+    gif_path: "assets/images/screen_on_flutter/screen_on_flutter_test.webp",
     isRight: false,
     platform: ['Android'],
     personnel: 1,
@@ -46,7 +46,7 @@ class Descriptor extends StatelessWidget {
       children: [
         const TextComponent(text: "사용 예시", ratio: 0.025),
         const ImageComponent(
-          path: "assets/images/screen_on_flutter/screen_on_flutter_4.png",
+          path: "assets/images/screen_on_flutter/screen_on_flutter_4.webp",
           widthRatio: 0.6,
         ),
         SizedBox(height: baseWidth * 0.02),
@@ -58,7 +58,7 @@ class Descriptor extends StatelessWidget {
         SizedBox(height: baseWidth * 0.03),
         const TextComponent(text: "구조", ratio: 0.025),
         const ImageComponent(
-          path: "assets/images/screen_on_flutter/screen_on_flutter_5.png",
+          path: "assets/images/screen_on_flutter/screen_on_flutter_5.webp",
           widthRatio: 0.7,
         ),
         SizedBox(height: baseWidth * 0.05),
@@ -78,7 +78,7 @@ class Descriptor extends StatelessWidget {
         SizedBox(height: baseWidth * 0.05),
         const TextComponent(text: "개선된 구조", ratio: 0.025),
         ImageComponent(
-          path: "assets/images/screen_on_flutter/screen_on_flutter_8.png",
+          path: "assets/images/screen_on_flutter/screen_on_flutter_8.webp",
         ),
         SizedBox(height: baseWidth * 0.02),
         EnterTextComponent(
@@ -109,7 +109,7 @@ class CreateFlutterEngine extends StatelessWidget {
                 border: Border.all(width: 2, color: Colors.black),
               ),
               child: Image.asset(
-                "assets/images/screen_on_flutter/create_flutter_engine.png",
+                "assets/images/screen_on_flutter/create_flutter_engine.webp",
                 width: baseWidth * 0.2,
                 fit: BoxFit.cover,
               ),
@@ -117,7 +117,7 @@ class CreateFlutterEngine extends StatelessWidget {
             SizedBox(width: baseWidth * 0.01),
 
             Image.asset(
-              "assets/images/screen_on_flutter/screen_on_flutter_1.png",
+              "assets/images/screen_on_flutter/screen_on_flutter_1.webp",
               width: baseWidth * 0.5,
               fit: BoxFit.cover,
             ),
@@ -145,7 +145,7 @@ class ScreenOnRegister extends StatelessWidget {
                 border: Border.all(width: 2, color: Colors.black),
               ),
               child: Image.asset(
-                "assets/images/screen_on_flutter/screen_on_registerReceiver.png",
+                "assets/images/screen_on_flutter/screen_on_registerReceiver.webp",
                 width: baseWidth * 0.2,
                 fit: BoxFit.cover,
               ),
@@ -153,7 +153,7 @@ class ScreenOnRegister extends StatelessWidget {
             SizedBox(width: baseWidth * 0.01),
 
             Image.asset(
-              "assets/images/screen_on_flutter/screen_on_flutter_7.png",
+              "assets/images/screen_on_flutter/screen_on_flutter_7.webp",
               width: baseWidth * 0.5,
               fit: BoxFit.cover,
             ),
@@ -181,7 +181,7 @@ class MethodChannelRequest extends StatelessWidget {
                 border: Border.all(width: 2, color: Colors.black),
               ),
               child: Image.asset(
-                "assets/images/screen_on_flutter/screen_on_flutter_6.png",
+                "assets/images/screen_on_flutter/screen_on_flutter_6.webp",
                 width: baseWidth * 0.2,
                 fit: BoxFit.cover,
               ),
@@ -189,7 +189,7 @@ class MethodChannelRequest extends StatelessWidget {
             SizedBox(width: baseWidth * 0.01),
 
             Image.asset(
-              "assets/images/screen_on_flutter/start_service.png",
+              "assets/images/screen_on_flutter/start_service.webp",
               width: baseWidth * 0.5,
               fit: BoxFit.cover,
             ),

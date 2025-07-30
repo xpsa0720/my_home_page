@@ -100,11 +100,11 @@ class _TaskbarState extends State<Taskbar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Image.asset("assets/images/windows_xp/computer.png", width: 20),
+            Image.asset("assets/images/windows_xp/computer.webp", width: 20),
             const SizedBox(width: 3),
-            Image.asset("assets/images/windows_xp/error.png", width: 20),
+            Image.asset("assets/images/windows_xp/error.webp", width: 20),
             const SizedBox(width: 2),
-            Image.asset("assets/images/windows_xp/sound.png", width: 20),
+            Image.asset("assets/images/windows_xp/sound.webp", width: 20),
             const SizedBox(width: 10),
             Text(_timeString, style: Text_style.copyWith(fontSize: 20)),
             const SizedBox(width: 15),
@@ -136,7 +136,7 @@ class _TaskbarState extends State<Taskbar> {
               width: 25,
               height: 25,
               child: Image.asset(
-                "assets/images/windows_xp/window_xp_logo.png",
+                "assets/images/windows_xp/window_xp_logo.webp",
                 fit: BoxFit.fill,
               ),
             ),

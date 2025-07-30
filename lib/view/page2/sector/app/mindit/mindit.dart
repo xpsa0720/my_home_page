@@ -54,16 +54,16 @@ class ScreenShot extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenshot_list = [
       [
-        "assets/images/mindit/mindit_1.jpg",
-        "assets/images/mindit/mindit_3.jpg",
+        "assets/images/mindit/mindit_1.webp",
+        "assets/images/mindit/mindit_3.webp",
       ],
       [
-        "assets/images/mindit/mindit_5.jpg",
-        "assets/images/mindit/mindit_4.jpg",
+        "assets/images/mindit/mindit_5.webp",
+        "assets/images/mindit/mindit_4.webp",
       ],
       [
-        "assets/images/mindit/mindit_2.jpg",
-        "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
+        "assets/images/mindit/mindit_2.webp",
+        "assets/images/screen_on_flutter/screen_on_flutter_test.webp",
       ],
     ];
 
@@ -86,12 +86,12 @@ class Provider extends StatelessWidget {
         const TextComponent(text: "상태관리 종속 관계", ratio: 0.025),
         SizedBox(height: baseWidth * 0.04),
         Image.asset(
-          "assets/images/mindit/mindit_provider_1.png",
+          "assets/images/mindit/mindit_provider_1.webp",
           width: baseWidth * 0.6,
         ),
         SizedBox(height: baseWidth * 0.1),
         Image.asset(
-          "assets/images/mindit/mindit_provider_2.png",
+          "assets/images/mindit/mindit_provider_2.webp",
           width: baseWidth * 0.6,
         ),
       ],
@@ -114,7 +114,7 @@ class LockScreen extends StatelessWidget {
             border: Border.all(width: 2, color: Colors.black),
           ),
           child: Image.asset(
-            "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
+            "assets/images/screen_on_flutter/screen_on_flutter_test.webp",
             width: baseWidth / 4,
           ),
         ),

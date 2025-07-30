@@ -3,7 +3,6 @@ import 'package:my_page/page/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  debugPrintRebuildDirtyWidgets = true;
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,

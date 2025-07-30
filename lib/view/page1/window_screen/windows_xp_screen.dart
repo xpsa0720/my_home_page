@@ -78,7 +78,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     return Container(
       height: sizeY,
       child: Image.asset(
-        "assets/images/windows_xp/cmd.png",
+        "assets/images/windows_xp/cmd.webp",
         fit: BoxFit.fitWidth,
       ),
     );
@@ -94,7 +94,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
             width: sizeX,
             height: sizeY,
             child: Image.asset(
-              "assets/images/windows_xp/cmd.png",
+              "assets/images/windows_xp/cmd.webp",
               fit: BoxFit.fitWidth,
             ),
             color: Colors.blue,
@@ -170,7 +170,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
         children: [
           Image.asset(
             width: sizeX * 0.025,
-            "assets/images/windows_xp/cmd_bar.png",
+            "assets/images/windows_xp/cmd_bar.webp",
             fit: BoxFit.fitWidth,
           ),
         ],
@@ -185,7 +185,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
         width: double.infinity,
         height: screenHeight,
         child: Image.asset(
-          "assets/images/windows_xp/window_background.jpg",
+          "assets/images/windows_xp/window_background.webp",
           fit: BoxFit.cover,
         ),
       ),

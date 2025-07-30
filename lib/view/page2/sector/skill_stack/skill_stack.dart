@@ -44,14 +44,14 @@ class Framework extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<List<List<String>>> skil_list = [
       [
-        ["C Language", "assets/images/pixel/C_Pixel.png"],
-        ["Flutter", "assets/images/pixel/flutter_pixel.png"],
-        ["Python", "assets/images/pixel/python_pixel.png"],
+        ["C Language", "assets/images/pixel/C_Pixel.webp"],
+        ["Flutter", "assets/images/pixel/flutter_pixel.webp"],
+        ["Python", "assets/images/pixel/python_pixel.webp"],
       ],
       [
-        ["JavaScript", "assets/images/pixel/pxArt.png"],
-        ["TypeScript", "assets/images/pixel/typeScript_pixel.png"],
-        ["NestJs", "assets/images/pixel/nestJs_Pixel.png"],
+        ["JavaScript", "assets/images/pixel/pxArt.webp"],
+        ["TypeScript", "assets/images/pixel/typeScript_pixel.webp"],
+        ["NestJs", "assets/images/pixel/nestJs_Pixel.webp"],
       ],
     ];
 
@@ -106,7 +106,7 @@ class DataBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> database_list = [
-      "assets/images/database/postgresql.png",
+      "assets/images/database/postgresql.webp",
       "assets/images/database/sqlite.webp",
     ];
 
@@ -139,10 +139,10 @@ class Tools extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> tools_list = [
-      "assets/images/tools/android_studio.png",
+      "assets/images/tools/android_studio.webp",
       "assets/images/tools/vs.webp",
-      "assets/images/tools/vscode.jpg",
-      "assets/images/tools/postman.png",
+      "assets/images/tools/vscode.webp",
+      "assets/images/tools/postman.webp",
     ];
 
     return Column(
@@ -173,16 +173,16 @@ class Collaboration extends StatelessWidget {
   const Collaboration({super.key});
   static const List<List<String>> collaboration_list = [
     [
-      "assets/images/collaboration/git.png",
-      "assets/images/collaboration/notion.png",
-      "assets/images/collaboration/figma.png",
-      "assets/images/collaboration/slack.png",
+      "assets/images/collaboration/git.webp",
+      "assets/images/collaboration/notion.webp",
+      "assets/images/collaboration/figma.webp",
+      "assets/images/collaboration/slack.webp",
     ],
     [
-      "assets/images/collaboration/ppt.png",
-      "assets/images/collaboration/excel.jpg",
-      "assets/images/collaboration/pr.png",
-      "assets/images/collaboration/ae.png",
+      "assets/images/collaboration/ppt.webp",
+      "assets/images/collaboration/excel.webp",
+      "assets/images/collaboration/pr.webp",
+      "assets/images/collaboration/ae.webp",
     ],
   ];
 

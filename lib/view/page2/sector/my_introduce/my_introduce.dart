@@ -79,7 +79,7 @@ class MyPicture extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         child: Image.asset(
-          "assets/images/my_picture.jpg",
+          "assets/images/my_picture.webp",
           width: baseWidth * 0.15,
         ),
         decoration: BoxDecoration(
