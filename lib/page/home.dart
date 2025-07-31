@@ -6,8 +6,7 @@ import '../view/page2/page2.dart';
 class Home extends StatelessWidget {
   static String get routeFullPath => '/';
   static String get routePath => '';
-  final _controller = ScrollController();
-  Home({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +14,8 @@ class Home extends StatelessWidget {
       backgroundColor: Color(0xFF4673E3),
       body: ListView(
         children: [
-          const WindowsXpScreen(),
-          const Page2(),
+          RepaintBoundary(child: const WindowsXpScreen()),
+          RepaintBoundary(child: const Page2()),
 
           Container(height: 1000),
         ],

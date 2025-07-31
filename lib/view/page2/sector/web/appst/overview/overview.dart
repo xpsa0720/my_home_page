@@ -39,14 +39,14 @@ class Descriptor extends StatelessWidget {
         const SizedBoxComponent(heightRatio: 0.05),
         const TextComponent(text: "테스트 과정", ratio: 0.03),
         Image.asset(
-          "assets/images/appst/appst_1.webp",
+          "assets/images/appst/appst_1.png",
           width: ScreenWidth(context) * 0.70,
         ),
         const SizedBoxComponent(heightRatio: 0.1),
         const TextComponent(text: "번거로운 인증 과정", ratio: 0.03),
         BorderPictureComponent(
           width: ScreenWidth(context) * 0.50,
-          path: "assets/images/appst/appst_2.webp",
+          path: "assets/images/appst/appst_2.png",
         ),
         SizedBoxComponent(heightRatio: 0.08),
         const EnterTextComponent(
@@ -56,7 +56,7 @@ class Descriptor extends StatelessWidget {
         const SizedBoxComponent(heightRatio: 0.04),
         const TextComponent(text: "appst로 진행하는 인증과정", ratio: 0.03),
         Image.asset(
-          "assets/images/appst/appst_3.webp",
+          "assets/images/appst/appst_3.png",
           width: ScreenWidth(context) * 0.70,
         ),
         const SizedBoxComponent(heightRatio: 0.03),
@@ -73,7 +73,7 @@ class Descriptor extends StatelessWidget {
         const TextComponent(text: "(설치와 인증 과정, 인증 확인이 매우 빠릅니다.)"),
         const SizedBoxComponent(heightRatio: 0.06),
         Image.asset(
-          "assets/images/appst/appst_4.webp",
+          "assets/images/appst/appst_4.png",
           width: ScreenWidth(context) * 0.70,
         ),
         const SizedBoxComponent(heightRatio: 0.03),

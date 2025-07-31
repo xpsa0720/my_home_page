@@ -54,7 +54,7 @@ class NestJS extends StatelessWidget {
       children: [
         const TextComponent(ratio: 0.03, text: "NestJS 요청-응답 Lifecycle"),
         SizedBox(height: ScreenWidth(context) * 0.02),
-        const ImageComponent(path: "assets/images/appst/appst_8.webp"),
+        const ImageComponent(path: "assets/images/appst/appst_8.png"),
       ],
     );
   }
@@ -69,7 +69,7 @@ class DataBase extends StatelessWidget {
       children: [
         const TextComponent(ratio: 0.03, text: "DataBase ERD(현재)"),
         SizedBox(height: ScreenWidth(context) * 0.02),
-        const ImageComponent(path: "assets/images/appst/appst_erd.webp"),
+        const ImageComponent(path: "assets/images/appst/appst_erd.png"),
       ],
     );
   }
@@ -149,7 +149,7 @@ class Current extends StatelessWidget {
             .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
         Image.asset(
-          "assets/images/appst/appst_4.webp",
+          "assets/images/appst/appst_4.png",
           width: ScreenWidth(context) * 0.6,
           fit: BoxFit.cover,
         ),

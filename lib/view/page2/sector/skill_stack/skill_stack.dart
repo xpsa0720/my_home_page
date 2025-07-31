@@ -44,14 +44,14 @@ class Framework extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<List<List<String>>> skil_list = [
       [
-        ["C Language", "assets/images/pixel/C_Pixel.webp"],
-        ["Flutter", "assets/images/pixel/flutter_pixel.webp"],
-        ["Python", "assets/images/pixel/python_pixel.webp"],
+        ["C Language", "assets/images/pixel/C_Pixel.png"],
+        ["Flutter", "assets/images/pixel/flutter_pixel.png"],
+        ["Python", "assets/images/pixel/python_pixel.png"],
       ],
       [
-        ["JavaScript", "assets/images/pixel/pxArt.webp"],
-        ["TypeScript", "assets/images/pixel/typeScript_pixel.webp"],
-        ["NestJs", "assets/images/pixel/nestJs_Pixel.webp"],
+        ["JavaScript", "assets/images/pixel/pxArt.png"],
+        ["TypeScript", "assets/images/pixel/typeScript_pixel.png"],
+        ["NestJs", "assets/images/pixel/nestJs_Pixel.png"],
       ],
     ];
 
@@ -70,7 +70,8 @@ class Framework extends StatelessWidget {
                   name: skil_list[row][i][0],
                   screenWidth: ScreenWidth(context),
                 ),
-                if (i != skil_list[row].length - 1) SizedBox(width: 40),
+                if (i != skil_list[row].length - 1)
+                  SizedBox(width: ScreenWidth(context) * 0.05),
               ],
             ],
           ),
@@ -106,8 +107,8 @@ class DataBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> database_list = [
-      "assets/images/database/postgresql.webp",
-      "assets/images/database/sqlite.webp",
+      "assets/images/database/postgresql.png",
+      "assets/images/database/sqlite.png",
     ];
 
     return Column(
@@ -139,10 +140,10 @@ class Tools extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> tools_list = [
-      "assets/images/tools/android_studio.webp",
-      "assets/images/tools/vs.webp",
-      "assets/images/tools/vscode.webp",
-      "assets/images/tools/postman.webp",
+      "assets/images/tools/android_studio.png",
+      "assets/images/tools/vs.png",
+      "assets/images/tools/vscode.png",
+      "assets/images/tools/postman.png",
     ];
 
     return Column(
@@ -173,16 +174,16 @@ class Collaboration extends StatelessWidget {
   const Collaboration({super.key});
   static const List<List<String>> collaboration_list = [
     [
-      "assets/images/collaboration/git.webp",
-      "assets/images/collaboration/notion.webp",
-      "assets/images/collaboration/figma.webp",
-      "assets/images/collaboration/slack.webp",
+      "assets/images/collaboration/git.png",
+      "assets/images/collaboration/notion.png",
+      "assets/images/collaboration/figma.png",
+      "assets/images/collaboration/slack.png",
     ],
     [
-      "assets/images/collaboration/ppt.webp",
-      "assets/images/collaboration/excel.webp",
-      "assets/images/collaboration/pr.webp",
-      "assets/images/collaboration/ae.webp",
+      "assets/images/collaboration/ppt.png",
+      "assets/images/collaboration/excel.png",
+      "assets/images/collaboration/pr.png",
+      "assets/images/collaboration/ae.png",
     ],
   ];
 

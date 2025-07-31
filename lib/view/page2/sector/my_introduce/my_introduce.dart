@@ -81,7 +81,7 @@ class MyPicture extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         child: Image.asset(
-          "assets/images/my_picture.webp",
+          "assets/images/my_picture.png",
           width: ScreenWidth(context) * 0.15,
         ),
         decoration: BoxDecoration(

@@ -36,16 +36,16 @@ class DataSnap extends StatelessWidget {
   );
   static const screenshot_list = [
     [
-      "assets/images/date_snap/date_snap_1.webp",
-      "assets/images/date_snap/date_snap_2.webp",
+      "assets/images/date_snap/date_snap_1.png",
+      "assets/images/date_snap/date_snap_2.png",
     ],
     [
-      "assets/images/date_snap/date_snap_3.webp",
-      "assets/images/date_snap/date_snap_4.webp",
+      "assets/images/date_snap/date_snap_3.png",
+      "assets/images/date_snap/date_snap_4.png",
     ],
     [
-      "assets/images/date_snap/date_snap_5.webp",
-      "assets/images/date_snap/date_snap_6.webp",
+      "assets/images/date_snap/date_snap_5.png",
+      "assets/images/date_snap/date_snap_6.png",
     ],
   ];
   @override
@@ -63,7 +63,7 @@ class DataSnap extends StatelessWidget {
         SizedBox(height: ScreenWidth(context) * 0.02),
         const TextComponent(text: "라벨 데이터 저장 방식", ratio: 0.025),
         Image.asset(
-          "assets/images/date_snap/date_snap_7.webp",
+          "assets/images/date_snap/date_snap_7.png",
           width: ScreenWidth(context) * 0.7,
           fit: BoxFit.cover,
         ),
@@ -80,7 +80,7 @@ class DataSnap extends StatelessWidget {
         ),
         SizedBox(height: ScreenWidth(context) * 0.03),
         const ImageComponent(
-          path: "assets/images/date_snap/date_snap_8.webp",
+          path: "assets/images/date_snap/date_snap_8.png",
           widthRatio: 0.4,
         ),
         SizedBox(height: ScreenWidth(context) * 0.03),
