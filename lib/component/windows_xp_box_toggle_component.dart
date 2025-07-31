@@ -58,7 +58,8 @@ class _WindowsXpBoxToggleComponentState
                     width: screenWidth * 0.8,
                     child: Text(
                       widget.title,
-                      style: const TextStyle(fontSize: 25),
+
+                      style: TextStyle(fontSize: screenWidth * 0.022),
                     ),
                   ),
                 ),

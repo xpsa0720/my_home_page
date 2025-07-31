@@ -14,9 +14,9 @@ class Page2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseWidth = MediaQuery.of(context).size.width;
+    double ScreenWidth = MediaQuery.of(context).size.width;
     if (!kIsWeb) {
-      baseWidth = baseWidth * 0.8;
+      ScreenWidth = ScreenWidth * 0.8;
     }
     return Stack(
       children: [
@@ -26,9 +26,9 @@ class Page2 extends StatelessWidget {
         ),
         Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: baseWidth * 0.1),
+            padding: EdgeInsets.symmetric(vertical: ScreenWidth * 0.1),
             child: Container(
-              width: kIsWeb ? baseWidth / 1.2 : double.infinity,
+              width: kIsWeb ? ScreenWidth / 1.2 : double.infinity,
 
               child: WindowsExplorerComponent(
                 child: Column(

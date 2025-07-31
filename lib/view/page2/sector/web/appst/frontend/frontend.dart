@@ -19,18 +19,18 @@ class FrontEnd extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              SizedBox(height: baseWidth * 0.02),
+              SizedBox(height: ScreenWidth(context) * 0.02),
               Current(model: model),
-              SizedBox(height: baseWidth * 0.05),
+              SizedBox(height: ScreenWidth(context) * 0.05),
               SecurityIssue(),
-              SizedBox(height: baseWidth * 0.1),
+              SizedBox(height: ScreenWidth(context) * 0.1),
               const TextComponent(ratio: 0.025, text: "Riverpod 종속 관계 (구현 완료)"),
-              SizedBox(height: baseWidth * 0.05),
+              SizedBox(height: ScreenWidth(context) * 0.05),
               Image.asset(
                 "assets/images/appst/appst_5.webp",
-                width: baseWidth * 0.70,
+                width: ScreenWidth(context) * 0.70,
               ),
-              SizedBox(height: baseWidth * 0.02),
+              SizedBox(height: ScreenWidth(context) * 0.02),
             ],
           ),
         ),
@@ -54,12 +54,12 @@ class SecurityIssue extends StatelessWidget {
           text: "flutter_secure_storage Web 보안 이슈",
           ratio: 0.025,
         ),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
         Image.asset(
           "assets/images/appst/appst_7.webp",
-          width: baseWidth * 0.66,
+          width: ScreenWidth(context) * 0.66,
         ),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
         EnterTextComponent(message: message, sizedBoxWidthRatio: 0.7),
       ],
     );
@@ -80,24 +80,24 @@ class Current extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "현재 진행중인 작업", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         EnterTextComponent(message: message),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
         BorderPictureComponent(
-          width: baseWidth * 0.6,
+          width: ScreenWidth(context) * 0.6,
           path: "assets/images/appst/appst_6.webp",
         ),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         GitLinkTextComponent(
           text: "링크",
           link: "https://github.com/xpsa0720/appst_frontend",
           ratio: 0.03,
         ),
-        SizedBox(height: baseWidth * 0.05),
+        SizedBox(height: ScreenWidth(context) * 0.05),
         const TextComponent(text: "현재 완료한 작업", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
         ...success_task.map((x) => TextComponent(text: x)).toList(),
-        SizedBox(height: baseWidth * 0.1),
+        SizedBox(height: ScreenWidth(context) * 0.1),
       ],
     );
   }
@@ -113,7 +113,7 @@ class Design extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "디자인 철학", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
 
         // 수정 필요
         EnterTextComponent(message: message),

@@ -17,27 +17,27 @@ class WebPortfolioComponent extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.all(baseWidth * 0.015),
+        padding: EdgeInsets.all(ScreenWidth(context) * 0.015),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: baseWidth * 0.01),
+            SizedBox(height: ScreenWidth(context) * 0.01),
             Image_GIF(
               title: model.title,
               gif_path: model.gif_path,
 
               isMaking: model.isMaking,
-              baseWidth: baseWidth,
+              screenWidth: ScreenWidth(context),
             ),
             SkillDescriptor(model: model), //
-            SizedBox(width: baseWidth * 0.03),
+            SizedBox(width: ScreenWidth(context) * 0.03),
             Descriptor(
               descriptor: model.descriptor,
               Language: model.Language,
               Language_skil: model.Language_skil,
             ),
 
-            SizedBox(height: baseWidth * 0.02),
+            SizedBox(height: ScreenWidth(context) * 0.02),
           ],
         ),
       ),
@@ -66,13 +66,13 @@ class Title extends StatelessWidget {
 
 class Image_GIF extends StatelessWidget {
   final String gif_path;
-  final double baseWidth;
+  final double screenWidth;
   final String title;
   final bool isMaking;
   const Image_GIF({
     super.key,
     required this.gif_path,
-    required this.baseWidth,
+    required this.screenWidth,
     required this.title,
     required this.isMaking,
   });
@@ -90,7 +90,7 @@ class Image_GIF extends StatelessWidget {
           ),
           child: Image.asset(
             gif_path,
-            width: baseWidth / 2,
+            width: ScreenWidth(context) / 2,
             fit: BoxFit.cover,
             gaplessPlayback: true,
           ),
@@ -114,13 +114,13 @@ class Descriptor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: baseWidth * 0.55,
+      width: ScreenWidth(context) * 0.55,
 
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: baseWidth * 0.03),
+          SizedBox(height: ScreenWidth(context) * 0.03),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children:
@@ -142,24 +142,24 @@ class SkillDescriptor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: baseWidth * 0.5,
+      width: ScreenWidth(context) * 0.5,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: baseWidth * 0.04),
+          SizedBox(height: ScreenWidth(context) * 0.04),
           Language(model: model),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           Framwork(model: model),
-          // SizedBox(height: baseWidth * 0.01),
+          // SizedBox(height: ScreenWidth(context) * 0.01),
           // Library(model: model, fontSize: fontSize),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           Platform(model: model),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           Personnel(model: model),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           if (model.git_link.isNotEmpty) GitLink(model: model),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           if (model.package.isNotEmpty) Package(model: model),
         ],
       ),
@@ -208,14 +208,14 @@ class Package extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
-              width: baseWidth * 0.17,
+              width: ScreenWidth(context) * 0.17,
               child: const TextComponent(text: "패키지: ", ratio: 0.025),
             ),
           ],
         ),
 
         SizedBox(
-          width: baseWidth * 0.30,
+          width: ScreenWidth(context) * 0.30,
           child: TextComponent(text: model.package.join(" "), ratio: 0.025),
         ),
       ],
@@ -232,7 +232,7 @@ class Personnel extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: baseWidth * 0.17,
+          width: ScreenWidth(context) * 0.17,
           child: const TextComponent(text: "개발 인원: ", ratio: 0.025),
         ),
 
@@ -257,7 +257,7 @@ class Platform extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: baseWidth * 0.17,
+          width: ScreenWidth(context) * 0.17,
           child: const TextComponent(text: "플랫폼: ", ratio: 0.025),
         ),
 
@@ -268,7 +268,7 @@ class Platform extends StatelessWidget {
                     (i, x) => [
                       TextComponent(text: x, ratio: 0.025),
                       if (model.platform.length - 1 != i)
-                        SizedBox(width: baseWidth * 0.02),
+                        SizedBox(width: ScreenWidth(context) * 0.02),
                     ],
                   )
                   .toList(),
@@ -287,7 +287,7 @@ class Library extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: baseWidth * 0.17,
+          width: ScreenWidth(context) * 0.17,
           child: const TextComponent(text: "라이브러리: ", ratio: 0.025),
         ),
 
@@ -296,7 +296,7 @@ class Library extends StatelessWidget {
               model.Language_skil.expand(
                 (x) => [
                   TextComponent(text: x, ratio: 0.025),
-                  SizedBox(width: baseWidth * 0.02),
+                  SizedBox(width: ScreenWidth(context) * 0.02),
                 ],
               ).toList(),
         ),
@@ -314,12 +314,12 @@ class Framwork extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: baseWidth * 0.17,
+          width: ScreenWidth(context) * 0.17,
           child: const TextComponent(text: "프레임워크: ", ratio: 0.025),
         ),
 
         SizedBox(
-          width: baseWidth * 0.3,
+          width: ScreenWidth(context) * 0.3,
 
           child: Row(
             children:
@@ -327,7 +327,7 @@ class Framwork extends StatelessWidget {
                   (i, x) => [
                     TextComponent(text: x, ratio: 0.025),
                     if (i != model.Framwork.length - 1)
-                      SizedBox(width: baseWidth * 0.02),
+                      SizedBox(width: ScreenWidth(context) * 0.02),
                   ],
                 ).toList(),
           ),
@@ -346,17 +346,17 @@ class Language extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: baseWidth * 0.17,
+          width: ScreenWidth(context) * 0.17,
           child: const TextComponent(text: "언어: ", ratio: 0.025),
         ),
         SizedBox(
-          width: baseWidth * 0.3,
+          width: ScreenWidth(context) * 0.3,
           child: Row(
             children:
                 model.Language.expand(
                   (x) => [
                     TextComponent(text: x, ratio: 0.025),
-                    SizedBox(width: baseWidth * 0.01),
+                    SizedBox(width: ScreenWidth(context) * 0.01),
                   ],
                 ).toList(),
           ),

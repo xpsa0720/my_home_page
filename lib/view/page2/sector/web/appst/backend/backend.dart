@@ -18,25 +18,25 @@ class Backend extends StatelessWidget {
           width: double.infinity,
           child: Column(
             children: [
-              SizedBox(height: baseWidth * 0.04),
+              SizedBox(height: ScreenWidth(context) * 0.04),
 
               // Design(),
-              // SizedBox(height: baseWidth * 0.04),
+              // SizedBox(height: ScreenWidth(context) * 0.04),
               Architecture(),
-              SizedBox(height: baseWidth * 0.02),
+              SizedBox(height: ScreenWidth(context) * 0.02),
 
               const GitLinkTextComponent(
                 text: "링크",
                 link: "https://github.com/xpsa0720/appst_backend",
                 ratio: 0.03,
               ),
-              SizedBox(height: baseWidth * 0.1),
+              SizedBox(height: ScreenWidth(context) * 0.1),
               DataBase(),
-              SizedBox(height: baseWidth * 0.1),
+              SizedBox(height: ScreenWidth(context) * 0.1),
               NestJS(),
-              SizedBox(height: baseWidth * 0.05),
+              SizedBox(height: ScreenWidth(context) * 0.05),
               Current(),
-              SizedBox(height: baseWidth * 0.1),
+              SizedBox(height: ScreenWidth(context) * 0.1),
             ],
           ),
         ),
@@ -53,7 +53,7 @@ class NestJS extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(ratio: 0.03, text: "NestJS 요청-응답 Lifecycle"),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         const ImageComponent(path: "assets/images/appst/appst_8.webp"),
       ],
     );
@@ -68,7 +68,7 @@ class DataBase extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(ratio: 0.03, text: "DataBase ERD(현재)"),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         const ImageComponent(path: "assets/images/appst/appst_erd.webp"),
       ],
     );
@@ -91,12 +91,12 @@ class Architecture extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "아키텍쳐 개요", ratio: 0.03),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              width: baseWidth * 0.2,
+              width: ScreenWidth(context) * 0.2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:
@@ -106,7 +106,7 @@ class Architecture extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: baseWidth * 0.25,
+              width: ScreenWidth(context) * 0.25,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children:
@@ -137,23 +137,23 @@ class Current extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(ratio: 0.03, text: "현재 완료한 작업"),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
         ...success_task
             .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
-        SizedBox(height: baseWidth * 0.1),
+        SizedBox(height: ScreenWidth(context) * 0.1),
         const TextComponent(ratio: 0.03, text: "현재 진행중인 작업"),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         ...message
             .split("\n")
             .map((x) => TextComponent(text: x, ratio: 0.025))
             .toList(),
         Image.asset(
           "assets/images/appst/appst_4.webp",
-          width: baseWidth * 0.6,
+          width: ScreenWidth(context) * 0.6,
           fit: BoxFit.cover,
         ),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
       ],
     );
   }

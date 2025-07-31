@@ -33,7 +33,7 @@ class LinkTextComponent extends StatelessWidget {
           text,
           style: Text_style.copyWith(
             color: Colors.blue,
-            fontSize: baseWidth * ratio,
+            fontSize: ScreenWidth(context) * ratio,
           ),
         ),
       ),

@@ -53,37 +53,37 @@ class DataSnap extends StatelessWidget {
     return Column(
       children: [
         AppPortfolioComponent(model: model),
-        SizedBox(height: baseWidth * 0.04),
+        SizedBox(height: ScreenWidth(context) * 0.04),
         PictureListComponent(
           list: screenshot_list,
-          PictureWidth: baseWidth * 0.3,
-          SizedBoxWidth: baseWidth * 0.02,
-          SizedBoxHeight: baseWidth * 0.04,
+          PictureWidth: ScreenWidth(context) * 0.3,
+          SizedBoxWidth: ScreenWidth(context) * 0.02,
+          SizedBoxHeight: ScreenWidth(context) * 0.04,
         ),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
         const TextComponent(text: "라벨 데이터 저장 방식", ratio: 0.025),
         Image.asset(
           "assets/images/date_snap/date_snap_7.webp",
-          width: baseWidth * 0.7,
+          width: ScreenWidth(context) * 0.7,
           fit: BoxFit.cover,
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         SizedBoxTextComponent(
           text:
               "라벨 데이터는 shared_preferences를 사용하여 저장했으며, 화면 길이에 비례하는 비율 기반으로 저장했습니다. 라벨의 크기는 라벨이 화면에서 비중을 차지하는 비율을 저장했습니다.",
           widthRatio: 0.6,
         ),
-        SizedBox(height: baseWidth * 0.1),
+        SizedBox(height: ScreenWidth(context) * 0.1),
         EnterTextComponent(
           message: "현재 비공개 테스트를 진행중이며, 아래의 이메일 그룹에\n 가입하여 사전 체험을 하실 수 있습니다",
           sizedBoxWidthRatio: 0.6,
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         const ImageComponent(
           path: "assets/images/date_snap/date_snap_8.webp",
           widthRatio: 0.4,
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -105,7 +105,7 @@ class DataSnap extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
       ],
     );
   }

@@ -87,6 +87,7 @@ flutter:
     - assets/images/tools/
     - assets/images/database/
     - assets/images/collaboration/
+    - assets/images/my_page/
 
   fonts:
     - family: neo

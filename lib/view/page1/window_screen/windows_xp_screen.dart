@@ -33,25 +33,26 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final double baseWidth = MediaQuery.of(context).size.width;
+    final double screenWidth = MediaQuery.of(context).size.width;
     if (prevbaseWidth == 0) {
-      prevbaseWidth = baseWidth;
+      prevbaseWidth = screenWidth;
       prevScreenHeight = screenHeight;
     }
 
-    if (prevbaseWidth != baseWidth) {
-      prevbaseWidth = baseWidth;
+    if (prevbaseWidth != screenWidth) {
+      prevbaseWidth = screenWidth;
       prevScreenHeight = screenHeight;
       init = true;
     }
 
     if (init) {
+      print(init);
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) {
           setState(() {
-            sizeX = baseWidth / 1.5;
+            sizeX = screenWidth / 1.5;
             sizeY = sizeX / 1.53;
-            posX = (baseWidth / 2) - sizeX * 0.5;
+            posX = (screenWidth / 2) - sizeX * 0.5;
             posY = (screenHeight / 2) - sizeY * 0.6;
             init = false;
           });
@@ -60,10 +61,10 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     }
     return Stack(
       children: [
-        background(baseWidth, screenHeight),
-        cmdPosition(baseWidth, screenHeight),
-        MyText(baseWidth, screenHeight),
-        cmd_BarPosition(baseWidth, screenHeight),
+        background(screenWidth, screenHeight),
+        cmdPosition(screenWidth, screenHeight),
+        MyText(screenWidth, screenHeight),
+        cmd_BarPosition(screenWidth, screenHeight),
 
         Container(
           width: double.infinity,
@@ -84,7 +85,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     );
   }
 
-  cmdPosition(double baseWidth, double screenHeight) {
+  cmdPosition(double screenWidth, double screenHeight) {
     return Positioned(
       left: posX,
       top: posY,
@@ -110,7 +111,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
                   final newX = posX + details.delta.dx;
                   final newY = posY + details.delta.dy;
                   if (newX >= 0 &&
-                      newX <= baseWidth - sizeX &&
+                      newX <= screenWidth - sizeX &&
                       newY >= 0 &&
                       newY <= screenHeight - sizeY - taskBarHeight) {
                     posX = newX;
@@ -131,7 +132,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     );
   }
 
-  MyText(double baseWidth, double screenHeight) {
+  MyText(double screenWidth, double screenHeight) {
     return Positioned(
       left: posX + sizeX * 0.02,
       top: posY + sizeY * 0.1,
@@ -162,7 +163,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     );
   }
 
-  cmd_BarPosition(double baseWidth, double screenHeight) {
+  cmd_BarPosition(double screenWidth, double screenHeight) {
     return Positioned(
       left: posX + sizeX - sizeX * 0.034,
       top: posY + sizeY - sizeY * 0.89,
@@ -178,7 +179,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
     );
   }
 
-  background(double baseWidth, double screenHeight) {
+  background(double screenWidth, double screenHeight) {
     return SizedBox(
       width: double.infinity,
       child: Container(

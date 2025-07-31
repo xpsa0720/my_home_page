@@ -17,6 +17,7 @@ class Home extends StatelessWidget {
         children: [
           const WindowsXpScreen(),
           const Page2(),
+
           Container(height: 1000),
         ],
       ),

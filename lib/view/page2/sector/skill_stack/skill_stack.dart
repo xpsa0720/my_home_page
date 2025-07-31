@@ -20,15 +20,15 @@ class SkillStack extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: baseWidth * 0.06),
+              SizedBox(height: ScreenWidth(context) * 0.06),
               const Framework(),
-              SizedBox(height: baseWidth * 0.06),
+              SizedBox(height: ScreenWidth(context) * 0.06),
               const DataBase(),
-              SizedBox(height: baseWidth * 0.06),
+              SizedBox(height: ScreenWidth(context) * 0.06),
               const Tools(),
-              SizedBox(height: baseWidth * 0.06),
+              SizedBox(height: ScreenWidth(context) * 0.06),
               const Collaboration(),
-              SizedBox(height: baseWidth * 0.06),
+              SizedBox(height: ScreenWidth(context) * 0.06),
             ],
           ),
         ),
@@ -58,7 +58,7 @@ class Framework extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "Language & Framework", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         for (int row = 0; row < skil_list.length; row++) ...[
           Row(
             mainAxisSize: MainAxisSize.min, //
@@ -68,13 +68,13 @@ class Framework extends StatelessWidget {
                 PixelImage(
                   pic: skil_list[row][i][1],
                   name: skil_list[row][i][0],
-                  baseWidth: baseWidth,
+                  screenWidth: ScreenWidth(context),
                 ),
                 if (i != skil_list[row].length - 1) SizedBox(width: 40),
               ],
             ],
           ),
-          SizedBox(height: baseWidth * 0.06),
+          SizedBox(height: ScreenWidth(context) * 0.06),
         ],
       ],
     );
@@ -83,16 +83,16 @@ class Framework extends StatelessWidget {
   PixelImage({
     required String pic,
     required String name,
-    required double baseWidth,
+    required double screenWidth,
   }) {
     return ConstrainedBox(
       constraints: BoxConstraints(minWidth: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Image.asset(pic, width: baseWidth * 0.05),
+          Image.asset(pic, width: screenWidth * 0.05),
 
-          SizedBox(width: baseWidth * 0.01),
+          SizedBox(width: screenWidth * 0.01),
           TextComponent(text: name, ratio: 0.03),
         ],
       ),
@@ -113,7 +113,7 @@ class DataBase extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "Database", ratio: 0.03),
-        SizedBox(height: baseWidth * 0.01),
+        SizedBox(height: ScreenWidth(context) * 0.01),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +123,7 @@ class DataBase extends StatelessWidget {
                     (i, x) => [
                       ImageComponent(path: x, widthRatio: 0.2),
                       if (i != database_list.length - 1)
-                        SizedBox(width: baseWidth * 0.04),
+                        SizedBox(width: ScreenWidth(context) * 0.04),
                     ],
                   )
                   .toList(),
@@ -148,7 +148,7 @@ class Tools extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "Tools", ratio: 0.03),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -158,12 +158,12 @@ class Tools extends StatelessWidget {
                     (i, x) => [
                       ImageComponent(path: x, widthRatio: 0.08),
                       if (i != tools_list.length - 1)
-                        SizedBox(width: baseWidth * 0.04),
+                        SizedBox(width: ScreenWidth(context) * 0.04),
                     ],
                   )
                   .toList(),
         ),
-        SizedBox(height: baseWidth * 0.08),
+        SizedBox(height: ScreenWidth(context) * 0.08),
       ],
     );
   }
@@ -194,7 +194,7 @@ class Collaboration extends StatelessWidget {
           text: "Collaboration & Design & Document",
           ratio: 0.03,
         ),
-        SizedBox(height: baseWidth * 0.02),
+        SizedBox(height: ScreenWidth(context) * 0.02),
 
         ...collaboration_list
             .expandIndexed<Widget>(
@@ -207,7 +207,7 @@ class Collaboration extends StatelessWidget {
                             (j, y) => [
                               ImageComponent(path: y, widthRatio: 0.08),
                               if (j != collaboration_list[i].length - 1)
-                                SizedBox(width: baseWidth * 0.04),
+                                SizedBox(width: ScreenWidth(context) * 0.04),
                             ],
                           )
                           .toList(),
@@ -216,7 +216,7 @@ class Collaboration extends StatelessWidget {
             )
             .toList(),
 
-        SizedBox(height: baseWidth * 0.08),
+        SizedBox(height: ScreenWidth(context) * 0.08),
       ],
     );
   }

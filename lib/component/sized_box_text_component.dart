@@ -17,10 +17,10 @@ class SizedBoxTextComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: widthRatio * baseWidth,
+      width: widthRatio * ScreenWidth(context),
       child: SelectableText(
         text,
-        style: Text_style.copyWith(fontSize: ratio * baseWidth),
+        style: Text_style.copyWith(fontSize: ratio * ScreenWidth(context)),
       ),
     );
   }

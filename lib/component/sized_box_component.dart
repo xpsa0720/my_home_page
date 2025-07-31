@@ -10,8 +10,8 @@ class SizedBoxComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: widthRatio == null ? 0 : baseWidth * widthRatio!,
-      height: heightRatio == null ? 0 : baseWidth * heightRatio!,
+      width: widthRatio == null ? 0 : ScreenWidth(context) * widthRatio!,
+      height: heightRatio == null ? 0 : ScreenWidth(context) * heightRatio!,
     );
   }
 }

@@ -16,10 +16,10 @@ class ImageComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(baseWidth * paddingRatio),
+      padding: EdgeInsets.all(ScreenWidth(context) * paddingRatio),
       child: Image.asset(
         path,
-        width: widthRatio * baseWidth,
+        width: widthRatio * ScreenWidth(context),
         fit: BoxFit.cover,
         gaplessPlayback: true,
       ),

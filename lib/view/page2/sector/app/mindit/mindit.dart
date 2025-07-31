@@ -36,11 +36,11 @@ class Mindit extends StatelessWidget {
     return Column(
       children: [
         AppPortfolioComponent(model: model),
-        SizedBox(height: baseWidth * 0.08),
+        SizedBox(height: ScreenWidth(context) * 0.08),
         ScreenShot(),
-        SizedBox(height: baseWidth * 0.08),
+        SizedBox(height: ScreenWidth(context) * 0.08),
         Provider(),
-        SizedBox(height: baseWidth * 0.08),
+        SizedBox(height: ScreenWidth(context) * 0.08),
         LockScreen(),
       ],
     );
@@ -69,9 +69,9 @@ class ScreenShot extends StatelessWidget {
 
     return PictureListComponent(
       list: screenshot_list,
-      PictureWidth: baseWidth * 0.3,
-      SizedBoxWidth: baseWidth * 0.02,
-      SizedBoxHeight: baseWidth * 0.04,
+      PictureWidth: ScreenWidth(context) * 0.3,
+      SizedBoxWidth: ScreenWidth(context) * 0.02,
+      SizedBoxHeight: ScreenWidth(context) * 0.04,
     );
   }
 }
@@ -84,15 +84,15 @@ class Provider extends StatelessWidget {
     return Column(
       children: [
         const TextComponent(text: "상태관리 종속 관계", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.04),
+        SizedBox(height: ScreenWidth(context) * 0.04),
         Image.asset(
           "assets/images/mindit/mindit_provider_1.webp",
-          width: baseWidth * 0.6,
+          width: ScreenWidth(context) * 0.6,
         ),
-        SizedBox(height: baseWidth * 0.1),
+        SizedBox(height: ScreenWidth(context) * 0.1),
         Image.asset(
           "assets/images/mindit/mindit_provider_2.webp",
-          width: baseWidth * 0.6,
+          width: ScreenWidth(context) * 0.6,
         ),
       ],
     );
@@ -108,17 +108,17 @@ class LockScreen extends StatelessWidget {
       children: [
         const TextComponent(text: "add-to-app 기술을 이용한 락 스크린", ratio: 0.025),
         const TextComponent(text: "(Screen on Flutter 참고)", ratio: 0.025),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         Container(
           decoration: BoxDecoration(
             border: Border.all(width: 2, color: Colors.black),
           ),
           child: Image.asset(
             "assets/images/screen_on_flutter/screen_on_flutter_test.webp",
-            width: baseWidth / 4,
+            width: ScreenWidth(context) / 4,
           ),
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
       ],
     );
   }

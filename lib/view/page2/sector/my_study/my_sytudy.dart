@@ -16,9 +16,9 @@ class MySytudy extends StatelessWidget {
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: baseWidth * 0.06),
+            SizedBox(height: ScreenWidth(context) * 0.06),
             const WhiteHatSchool(),
-            SizedBox(height: baseWidth * 0.06),
+            SizedBox(height: ScreenWidth(context) * 0.06),
             const Inflearn(),
           ],
         ),
@@ -37,7 +37,7 @@ class WhiteHatSchool extends StatelessWidget {
       children: [
         Image.asset(
           "assets/images/whitehatschool.webp",
-          width: baseWidth * 0.30,
+          width: ScreenWidth(context) * 0.30,
         ),
         const TextComponent(text: "화이트햇 스쿨 1기 수료"),
         const TextComponent(text: "보안 프로젝트 PM"),
@@ -80,9 +80,9 @@ class Inflearn extends StatelessWidget {
       children: [
         Image.asset(
           "assets/images/inflearn/inflearn_logo.webp",
-          width: baseWidth * 0.3,
+          width: ScreenWidth(context) * 0.3,
         ),
-        SizedBox(height: baseWidth * 0.03),
+        SizedBox(height: ScreenWidth(context) * 0.03),
         const TextComponent(text: "인프런 수강 목록", ratio: 0.035),
         const TextComponent(text: "(총 108시간)", ratio: 0.025),
         Column(
@@ -101,12 +101,14 @@ class Inflearn extends StatelessWidget {
                                       discriptor: descriptor[i][j],
                                     ),
                                     if (j != ((descriptor[i].length) - 1))
-                                      SizedBox(width: baseWidth * 0.03),
+                                      SizedBox(
+                                        width: ScreenWidth(context) * 0.03,
+                                      ),
                                   ],
                                 )
                                 .toList(),
                       ),
-                      SizedBox(height: baseWidth * 0.07),
+                      SizedBox(height: ScreenWidth(context) * 0.07),
                     ],
                   )
                   .toList(),
@@ -132,10 +134,10 @@ class Inflearn_mini_component extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            width: baseWidth * 0.3,
+            width: ScreenWidth(context) * 0.3,
             child: Image.asset(path, fit: BoxFit.cover),
           ),
-          SizedBox(height: baseWidth * 0.01),
+          SizedBox(height: ScreenWidth(context) * 0.01),
           TextComponent(text: discriptor, ratio: 0.020),
         ],
       ),

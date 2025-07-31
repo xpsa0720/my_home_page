@@ -15,7 +15,7 @@ class EnterTextComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: baseWidth * 0.6,
+      width: ScreenWidth(context) * 0.6,
       child: Column(
         children:
             message.split("\n").map((x) => TextComponent(text: x)).toList(),
