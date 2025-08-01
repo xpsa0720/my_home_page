@@ -108,7 +108,7 @@ class DataBase extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<String> database_list = [
       "assets/images/database/postgresql.png",
-      "assets/images/database/sqlite.png",
+      "assets/images/database/sqlite.webp",
     ];
 
     return Column(
@@ -141,9 +141,10 @@ class Tools extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<String> tools_list = [
       "assets/images/tools/android_studio.png",
-      "assets/images/tools/vs.png",
-      "assets/images/tools/vscode.png",
-      "assets/images/tools/postman.png",
+      "assets/images/tools/vs.webp",
+
+      "assets/images/tools/vscode.jpg",
+      "assets/images/tools/postman.webp",
     ];
 
     return Column(
@@ -181,7 +182,7 @@ class Collaboration extends StatelessWidget {
     ],
     [
       "assets/images/collaboration/ppt.png",
-      "assets/images/collaboration/excel.png",
+      "assets/images/collaboration/excel.jpg",
       "assets/images/collaboration/pr.png",
       "assets/images/collaboration/ae.png",
     ],

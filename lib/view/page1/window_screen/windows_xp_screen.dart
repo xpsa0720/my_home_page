@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../component/task_bar_component.dart';
 
 class WindowsXpScreen extends StatefulWidget {
-  const WindowsXpScreen({super.key});
+  WindowsXpScreen({super.key});
 
   @override
   State<WindowsXpScreen> createState() => _WindowsXpScreenState();
@@ -186,7 +186,7 @@ class _WindowsXpScreenState extends State<WindowsXpScreen> {
         width: double.infinity,
         height: screenHeight,
         child: Image.asset(
-          "assets/images/windows_xp/window_background.png",
+          "assets/images/windows_xp/window_background.jpg",
           fit: BoxFit.cover,
         ),
       ),

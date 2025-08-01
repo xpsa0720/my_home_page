@@ -26,6 +26,7 @@ class Mindit extends StatelessWidget {
 
     Language_skil: ["Riverpod", "sqflite"],
     gif_path: "assets/images/gif/mindit_test.gif",
+    // gif_path: "assets/images/gif/mindit_1.jpg",
     isRight: true,
     platform: ['Android'],
     personnel: 1,
@@ -54,16 +55,16 @@ class ScreenShot extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenshot_list = [
       [
-        "assets/images/mindit/mindit_1.png",
-        "assets/images/mindit/mindit_3.png",
+        "assets/images/mindit/mindit_1.jpg",
+        "assets/images/mindit/mindit_3.jpg",
       ],
       [
-        "assets/images/mindit/mindit_5.png",
-        "assets/images/mindit/mindit_4.png",
+        "assets/images/mindit/mindit_5.jpg",
+        "assets/images/mindit/mindit_4.jpg",
       ],
       [
-        "assets/images/mindit/mindit_2.png",
-        "assets/images/screen_on_flutter/screen_on_flutter_test.png",
+        "assets/images/mindit/mindit_2.jpg",
+        "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
       ],
     ];
 
@@ -114,7 +115,7 @@ class LockScreen extends StatelessWidget {
             border: Border.all(width: 2, color: Colors.black),
           ),
           child: Image.asset(
-            "assets/images/screen_on_flutter/screen_on_flutter_test.png",
+            "assets/images/screen_on_flutter/screen_on_flutter_test.jpg",
             width: ScreenWidth(context) / 4,
           ),
         ),

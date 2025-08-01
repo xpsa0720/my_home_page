@@ -30,22 +30,23 @@ class DataSnap extends StatelessWidget {
 
     Language_skil: [],
     gif_path: "assets/images/gif/date_snap_test.gif",
+    // gif_path: "assets/images/gif/date_snap_1.jpg",
     isRight: true,
     platform: ['Android'],
     personnel: 1,
   );
   static const screenshot_list = [
     [
-      "assets/images/date_snap/date_snap_1.png",
-      "assets/images/date_snap/date_snap_2.png",
+      "assets/images/date_snap/date_snap_1.jpg",
+      "assets/images/date_snap/date_snap_2.jpg",
     ],
     [
-      "assets/images/date_snap/date_snap_3.png",
-      "assets/images/date_snap/date_snap_4.png",
+      "assets/images/date_snap/date_snap_3.jpg",
+      "assets/images/date_snap/date_snap_4.jpg",
     ],
     [
-      "assets/images/date_snap/date_snap_5.png",
-      "assets/images/date_snap/date_snap_6.png",
+      "assets/images/date_snap/date_snap_5.jpg",
+      "assets/images/date_snap/date_snap_6.jpg",
     ],
   ];
   @override
@@ -80,7 +81,7 @@ class DataSnap extends StatelessWidget {
         ),
         SizedBox(height: ScreenWidth(context) * 0.03),
         const ImageComponent(
-          path: "assets/images/date_snap/date_snap_8.png",
+          path: "assets/images/date_snap/date_snap_8.jpg",
           widthRatio: 0.4,
         ),
         SizedBox(height: ScreenWidth(context) * 0.03),

@@ -14,9 +14,8 @@ class Home extends StatelessWidget {
       backgroundColor: Color(0xFF4673E3),
       body: ListView(
         children: [
-          RepaintBoundary(child: const WindowsXpScreen()),
+          RepaintBoundary(child: WindowsXpScreen()),
           RepaintBoundary(child: const Page2()),
-
           Container(height: 1000),
         ],
       ),
